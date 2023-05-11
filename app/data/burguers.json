@@ -1,0 +1,199 @@
+[
+  {
+    "id": 1,
+    "titulo": "Hamburguesa clásica",
+    "descripcion": "La hamburguesa más tradicional de todas, con carne de vacuno, lechuga, tomate, cebolla y salsa especial.",
+    "categoria": "Clásicas",
+    "precio": 8.99,
+    "ingredientes": ["Carne de vacuno", "Lechuga", "Tomate", "Cebolla", "Salsa especial"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 2,
+    "titulo": "Hamburguesa BBQ",
+    "descripcion": "Carne de vacuno con queso cheddar, bacon crujiente, cebolla caramelizada y salsa BBQ.",
+    "categoria": "Especiales",
+    "precio": 12.99,
+    "ingredientes": [
+      "Carne de vacuno",
+      "Queso cheddar",
+      "Bacon",
+      "Cebolla caramelizada",
+      "Salsa BBQ"
+    ],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 3,
+    "titulo": "Hamburguesa de pollo",
+    "descripcion": "Pollo marinado con lechuga, tomate, cebolla y mayonesa.",
+    "categoria": "Pollo",
+    "precio": 9.99,
+    "ingredientes": ["Pollo marinado", "Lechuga", "Tomate", "Cebolla", "Mayonesa"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 4,
+    "titulo": "Hamburguesa vegana",
+    "descripcion": "Hamburguesa de garbanzos con lechuga, tomate, cebolla y mayonesa vegana.",
+    "categoria": "Veganas",
+    "precio": 10.99,
+    "ingredientes": ["Hamburguesa de garbanzos", "Lechuga", "Tomate", "Cebolla", "Mayonesa vegana"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 5,
+    "titulo": "Hamburguesa picante",
+    "descripcion": "Carne de vacuno con queso cheddar, jalapeños y salsa picante.",
+    "categoria": "Especiales",
+    "precio": 11.99,
+    "ingredientes": ["Carne de vacuno", "Queso cheddar", "Jalapeños", "Salsa picante"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 6,
+    "titulo": "Hamburguesa doble",
+    "descripcion": "Doble carne de vacuno con queso cheddar, lechuga, tomate y salsa especial.",
+    "categoria": "Clásicas",
+    "precio": 14.99,
+    "ingredientes": [
+      "Doble carne de vacuno",
+      "Queso cheddar",
+      "Lechuga",
+      "Tomate",
+      "Salsa especial"
+    ],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 7,
+    "titulo": "Hamburguesa con champiñones",
+    "descripcion": "Carne de vacuno con champiñones salteados, queso suizo y mayonesa de ajo.",
+    "categoria": "Especiales",
+    "precio": 13.99,
+    "ingredientes": ["Carne de vacuno", "Champiñones salteados", "Queso suizo", "Mayonesa de ajo"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 8,
+    "titulo": "Hamburguesa de salmón",
+    "descripcion": "Hamburguesa de salmón con lechuga, tomate y salsa tártara.",
+    "categoria": "Pescado",
+    "precio": 15.99,
+    "ingredientes": ["Hamburguesa de salmón", "Lechuga", "Tomate", "Salsa tártara"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 9,
+    "titulo": "Hamburguesa de cordero",
+    "descripcion": "Hamburguesa de cordero con lechuga, tomate, cebolla y salsa de yogur.",
+    "categoria": "Carnes",
+    "precio": 12.99,
+    "ingredientes": ["Hamburguesa de cordero", "Lechuga", "Tomate", "Cebolla", "Salsa de yogur"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 10,
+    "titulo": "Hamburguesa con aguacate",
+    "descripcion": "Carne de vacuno con aguacate, queso feta y salsa de cilantro.",
+    "categoria": "Especiales",
+    "precio": 13.99,
+    "ingredientes": ["Carne de vacuno", "Aguacate", "Queso feta", "Salsa de cilantro"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 11,
+    "titulo": "Hamburguesa con huevo",
+    "descripcion": "Carne de vacuno con huevo frito, queso cheddar y salsa especial.",
+    "categoria": "Especiales",
+    "precio": 11.99,
+    "ingredientes": ["Carne de vacuno", "Huevo frito", "Queso cheddar", "Salsa especial"],
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+  },
+  {
+    "id": 12,
+    "titulo": "Hamburguesa de tofu",
+    "descripcion": "Hamburguesa de tofu con lechuga, tomate, cebolla y mayonesa vegana.",
+    "categoria": "Veganas",
+    "precio": 10.99,
+    "ingredientes": ["Hamburguesa de tofu", "Lechuga", "Tomate", "Cebolla", "Mayonesa vegana"],
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+  },
+  {
+    "id": 13,
+    "titulo": "Hamburguesa con jalapeños",
+    "descripcion": "Carne de vacuno con jalapeños, queso cheddar y salsa barbacoa.",
+    "categoria": "Especiales",
+    "precio": 13.99,
+    "ingredientes": ["Carne de vacuno", "Jalapeños", "Queso cheddar", "Salsa barbacoa"],
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+  },
+  {
+    "id": 14,
+    "titulo": "Hamburguesa de pollo crujiente",
+    "descripcion": "Pechuga de pollo empanizada con lechuga, tomate y mayonesa de mostaza.",
+    "categoria": "Pollo",
+    "precio": 11.99,
+    "ingredientes": ["Pechuga de pollo empanizada", "Lechuga", "Tomate", "Mayonesa de mostaza"],
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+  },
+  {
+    "id": 15,
+    "titulo": "Hamburguesa con queso azul",
+    "descripcion": "Carne de vacuno con queso azul, cebolla caramelizada y rúcula.",
+    "categoria": "Especiales",
+    "precio": 14.99,
+    "ingredientes": ["Carne de vacuno", "Queso azul", "Cebolla caramelizada", "Rúcula"],
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+  },
+  {
+    "id": 16,
+    "titulo": "Hamburguesa con cebolla",
+    "descripcion": "Carne de vacuno con cebolla frita, queso cheddar y salsa de miel y mostaza.",
+    "categoria": "Especiales",
+    "precio": 13.99,
+    "ingredientes": [
+      "Carne de vacuno",
+      "Cebolla frita",
+      "Queso cheddar",
+      "Salsa de miel y mostaza"
+    ],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 17,
+    "titulo": "Hamburguesa de berenjena",
+    "descripcion": "Hamburguesa de berenjena con lechuga, tomate, cebolla y mayonesa vegana.",
+    "categoria": "Veganas",
+    "precio": 10.99,
+    "ingredientes": ["Hamburguesa de berenjena", "Lechuga", "Tomate", "Cebolla", "Mayonesa vegana"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 18,
+    "titulo": "Hamburguesa con huevo frito",
+    "descripcion": "Carne de vacuno con huevo frito, queso cheddar y salsa tártara.",
+    "categoria": "Especiales",
+    "precio": 14.99,
+    "ingredientes": ["Carne de vacuno", "Huevo frito", "Queso cheddar", "Salsa tártara"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 19,
+    "titulo": "Hamburguesa vegetariana",
+    "descripcion": "Hamburguesa vegetariana con queso cheddar, lechuga, tomate y mayonesa.",
+    "categoria": "Vegetarianas",
+    "precio": 11.99,
+    "ingredientes": ["Hamburguesa vegetariana", "Queso cheddar", "Lechuga", "Tomate", "Mayonesa"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 20,
+    "titulo": "Hamburguesa de salmón",
+    "descripcion": "Hamburguesa de salmón con lechuga, tomate, cebolla y mayonesa de eneldo.",
+    "categoria": "Pescado",
+    "precio": 13.99,
+    "ingredientes": ["Hamburguesa de salmón", "Lechuga", "Tomate", "Cebolla", "Mayonesa de eneldo"],
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+  }
+]

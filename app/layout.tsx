@@ -13,18 +13,17 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const currentUser = await getCurrentUser()
-  console.log(currentUser)
 
   return (
     <html lang='es'>
-      <body className='container mx-auto'>
-        <AuthContext>
+      <AuthContext>
+        <body className='container mx-auto'>
           <NavBarTwo currentUser={currentUser} />
           <ToasterContext />
           {children}
           <Footer />
-        </AuthContext>
-      </body>
+        </body>
+      </AuthContext>
     </html>
   )
 }

@@ -13,7 +13,7 @@ type SectionProps = {
 const Section: React.FC<SectionProps> = ({ text1, text2, text3, image, reverse }) => {
   return (
     <section
-      className={`flex py-20 w-full md:flex-row flex-col items-center justify-between px-10 mx-auto container  bg-white ${
+      className={`flex py-20 w-full md:flex-row flex-col items-center justify-between px-10 gap-8 md:gap-0 mx-auto container  bg-white ${
         reverse ? 'md:flex-row-reverse' : ''
       } `}
     >

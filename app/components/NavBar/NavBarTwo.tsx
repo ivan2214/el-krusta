@@ -21,8 +21,6 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
   const [openModalUser, setOpenModalUser] = useState(false)
   const [openMenu, setOpenMenu] = useState(false)
 
-  console.log(currentUser?.image)
-
   return (
     <nav className='bg-white sticky z-20 top-0 border-gray-200 dark:bg-slate-900'>
       <div className=' md:w-full flex items-center flex-wrap md:flex-nowrap justify-between mx-auto px-4 py-3'>
