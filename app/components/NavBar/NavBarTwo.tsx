@@ -27,7 +27,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
         <div className=' flex items-center justify-center gap-5'>
           <a href='/' className='flex items-center'>
             <Image
-              width={50}
+              width={32}
               height={32}
               src='/images/logo.jpg'
               className='h-8 mr-3 rounded-full'
