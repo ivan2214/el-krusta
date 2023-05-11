@@ -24,7 +24,7 @@ function Carousel() {
       <div className='relative flex items-center justify-center '>
         <button
           onClick={scrollLeft}
-          className='absolute -bottom-8 left-5 lg:left-0 xl:left-8 lg:-bottom-8 z-40 rounded-full bg-orange-500 text-white text-3xl'
+          className='absolute -bottom-8 left-5 lg:left-0 xl:left-8 lg:-bottom-8 z-40 rounded-full bg-krusta text-white text-3xl'
         >
           <AiOutlineArrowLeft size={30} />
         </button>
@@ -32,7 +32,7 @@ function Carousel() {
           id='content'
           className='carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth relative  scrollbar-hide gap-5'
         >
-          {burguers.map((b) => (
+          {burguers?.slice(0,5).map((b) => (
             <div key={b.id}>
               <CardBurguers
                 categoria={b.categoria}
@@ -45,7 +45,7 @@ function Carousel() {
         </section>
         <button
           onClick={scrollRight}
-          className='absolute -bottom-8 right-5 lg:right-0 xl:right-8 lg:-bottom-8 z-40 rounded-full bg-orange-500 text-white text-3xl'
+          className='absolute -bottom-8 right-5 lg:right-0 xl:right-8 lg:-bottom-8 z-40 rounded-full bg-krusta text-white text-3xl'
         >
           <AiOutlineArrowRight size={30} />
         </button>

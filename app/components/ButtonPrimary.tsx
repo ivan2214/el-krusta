@@ -24,14 +24,15 @@ const ButtonPrimary: React.FC<ButtonProps> = ({
         `
     flex 
     justify-center 
-    text-almost-black  rounded-xl px-5 py-2 border-2 shadow-md hover:bg-orange-400 hover:text-almost-white lg:text-xl lg:py-3 lg:px-8 
+    rounded-xl px-5 py-2 border-2 shadow-md hover:bg-orange-400 hover:text-almost-white lg:text-xl lg:py-3 lg:px-8 
     text-sm 
     font-semibold 
-    bg-white-500
+    bg-krusta
+    capitalize
+    text-white
     `,
         disabled && 'opacity-50 cursor-default',
         fullWidth && 'w-full',
-        secondary ? 'text-gray-900' : 'text-white',
       )}
     >
       {children}

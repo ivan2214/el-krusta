@@ -10,7 +10,7 @@ const Hero = (props: Props) => {
       <section className='flex gap-16 md:gap-0 md:min-h-screen lg:h-auto h-full flex-col-reverse md:flex-row w-full items-center justify-between'>
         {/* textos izq */}
         <div className='flex w-full flex-col items-start justify-between gap-10 px-10'>
-          <p className='text-orange-500 text-4xl lg:text-[5rem] lg:leading-[5rem] font-bold'>
+          <p className='text-krusta text-4xl lg:text-[5rem] lg:leading-[5rem] font-bold'>
             Entrega
             <span className='block text-gray-950 text-2xl lg:text-[5rem] lg:leading-[5rem] font-bold'>
               de comida rápida
