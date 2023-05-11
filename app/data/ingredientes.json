@@ -1,0 +1,20 @@
+[
+  { "id": 1, "nombre": "Carne de vaca" },
+  { "id": 2, "nombre": "Lechuga" },
+  { "id": 3, "nombre": "Tomate" },
+  { "id": 4, "nombre": "Cebolla" },
+  { "id": 5, "nombre": "Salsa especial" },
+  { "id": 6, "nombre": "Queso cheddar" },
+  { "id": 7, "nombre": "Bacon" },
+  { "id": 8, "nombre": "Cebolla caramelizada" },
+  { "id": 9, "nombre": "Salsa BBQ" },
+  { "id": 10, "nombre": "Pollo" },
+  { "id": 11, "nombre": "Mayonesa" },
+  { "id": 12, "nombre": "Hamburguesa de garbanzos" },
+  { "id": 13, "nombre": "Mayonesa vegana" },
+  { "id": 14, "nombre": "Jalapeños" },
+  { "id": 15, "nombre": "Salsa picante" },
+  { "id": 16, "nombre": "Doble carne de vaca" },
+  { "id": 17, "nombre": "Queso suizo" },
+  { "id": 18, "nombre": "Mayonesa de ajo" }
+]

@@ -38,7 +38,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
           <ul className='md:flex gap-10 hidden items-center justify-center '>
             <div className='flex items-center justify-center gap-3 '>
               <MdOutlineRestaurantMenu className='text-white' size={20} />
-              <a href='#' className='text-white' aria-current='page'>
+              <a href='/carta' className='text-white' aria-current='page'>
                 La carta
               </a>
             </div>
@@ -174,7 +174,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               <li className='flex items-center justify-start gap-3  w-full'>
                 <MdOutlineRestaurantMenu className='text-white' size={20} />
                 <a
-                  href='#'
+                  href='/carta'
                   className='block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-orange-600 md:p-0 md:dark:text-orange-600'
                   aria-current='page'
                 >

@@ -2,6 +2,9 @@ import getCurrentUser from './actions/getCurrentUser'
 import Footer from './components/Footer/Footer'
 import NavBarTwo from './components/NavBar/NavBarTwo'
 import AuthContext from './context/AuthContext'
+import { BurguerContextProvider } from './context/BurguersContext'
+import { CategorieContextProvider } from './context/CategoriesContext'
+import { IngredientesContextProvider } from './context/IngredientesContext'
 import ToasterContext from './context/ToasterContext'
 import './globals.css'
 
@@ -18,10 +21,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang='es'>
       <AuthContext>
         <body className='container mx-auto'>
-          <NavBarTwo currentUser={currentUser} />
-          <ToasterContext />
-          {children}
-          <Footer />
+          <BurguerContextProvider>
+            <CategorieContextProvider>
+              <IngredientesContextProvider>
+                <NavBarTwo currentUser={currentUser} />
+                <ToasterContext />
+                {children}
+                <Footer />
+              </IngredientesContextProvider>
+            </CategorieContextProvider>
+          </BurguerContextProvider>
         </body>
       </AuthContext>
     </html>

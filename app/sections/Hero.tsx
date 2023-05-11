@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import ButtonPrimary from '../components/ButtonPrimary'
 
 type Props = {}
 
@@ -19,9 +20,7 @@ const Hero = (props: Props) => {
             Haz que tu equipo esté sincronizado, sin importar tu ubicación. Agilizar procesos, crear
             rituales de equipo, y observe cómo se dispara la productividad.
           </p>
-          <button className='text-almost-white bg-almost-black rounded-xl px-5 py-2 border border-almost-black hover:bg-almost-white hover:text-almost-black lg:text-xl lg:py-3 lg:px-8'>
-            leer mas
-          </button>
+          <ButtonPrimary>leer mas</ButtonPrimary>
         </div>
 
         {/*imagen derecha */}
