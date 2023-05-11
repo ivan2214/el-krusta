@@ -23,8 +23,8 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt }) => {
   return (
     <>
       <Image
-        width={30}
-        height={30}
+        width={1280}
+        height={720}
         className='
           h-full 
           w-full 
