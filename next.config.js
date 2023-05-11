@@ -7,6 +7,7 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'via.placeholder.com',
       'th.bing.com',
+      'www.colourbox.com',
     ],
   },
 }
