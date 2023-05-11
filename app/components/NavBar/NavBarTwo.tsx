@@ -22,7 +22,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
-    <nav className='bg-white sticky z-20 top-0 border-gray-200 dark:bg-slate-900'>
+    <nav className=' sticky z-20 top-0 border-gray-200 bg-krusta'>
       <div className=' md:w-full flex items-center flex-wrap md:flex-nowrap justify-between mx-auto px-4 py-3'>
         <div className=' flex items-center justify-center gap-5'>
           <a href='/' className='flex items-center'>
@@ -37,15 +37,22 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
 
           <ul className='md:flex gap-10 hidden items-center justify-center '>
             <div className='flex items-center justify-center gap-3 '>
-              <MdOutlineRestaurantMenu className='text-white' size={20} />
-              <a href='/carta' className='text-white' aria-current='page'>
+              <a
+                href='/carta'
+                className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
+                aria-current='page'
+              >
+                <MdOutlineRestaurantMenu className='' size={25} />
                 La carta
               </a>
             </div>
             <div className='flex items-center justify-center gap-3 '>
-              <AiOutlineInfoCircle className='text-white' size={20} />
-              <a href='#' className='text-white'>
-                About
+              <a
+                href='#'
+                className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
+              >
+                <AiOutlineInfoCircle className='' size={25} />
+                Informacion
               </a>
             </div>
           </ul>
@@ -54,24 +61,14 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
         {/* burguer menu mobile */}
         <div className='flex md:hidden gap-6  items-center justify-center '>
           {/* menu burguer */}
-          <section className='flex items-center gap-6'>
+          <section className='flex items-center justify-center gap-6'>
             <div className='flex items-center '>
               <a
                 href='/cart'
-                className='text-white hover:text-orange-600 duration-150 transition ease-linear'
+                className='text-white hover:text-black duration-150 transition ease-linear'
               >
                 <AiOutlineShopping size={25} />
               </a>
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMenu((old) => !old)}
-                type='button'
-                className='inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
-              >
-                <AiOutlineMenu size={25} />
-              </button>
             </div>
           </section>
           {/* fin menu burguer mobile*/}
@@ -82,7 +79,6 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               className='flex relative  mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-2 focus:ring-white dark:focus:ring-white'
               onClick={() => setOpenModalUser((old) => !old)}
             >
-              <span className='sr-only'>Open user menu</span>
               <img
                 className='w-8 h-8 rounded-full'
                 src={currentUser?.image || 'https://via.placeholder.com/10x10?text='}
@@ -91,24 +87,20 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               {/* <!-- Dropdown menu user cuando hay usuario --> */}
               {openModalUser && (
                 <div
-                  className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg md:rounded-md shadow md:my-0 dark:bg-gray-700 dark:divide-gray-600 flex items-start flex-col ${
+                  className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg md:rounded-md shadow md:my-0 text-black dark:divide-gray-600 flex items-start flex-col ${
                     openModalUser ? 'absolute top-0 right-8 md:-top-2 md:right-9' : ''
                   } `}
                 >
                   <div className='px-4 py-3 flex flex-col items-start'>
-                    <span className='block text-sm text-slatebg-slate-900 dark:text-white'>
-                      {currentUser?.name}
-                    </span>
-                    <span className='block text-sm  text-gray-500  dark:text-gray-400'>
-                      {currentUser?.email}
-                    </span>
+                    <span className='block text-lg font-bold'>{currentUser?.name}</span>
+                    <span className='block text-sm  font-light '>{currentUser?.email}</span>
                   </div>
-                  <ul className='flex flex-col w-full items-start'>
+                  <ul className='flex flex-col w-full  items-start'>
                     {currentUser?.admin && (
                       <li className='block w-full'>
                         <a
                           href='#'
-                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                          className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize '
                         >
                           Admin
                         </a>
@@ -118,7 +110,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                     <li className='block w-full'>
                       <a
                         href='#'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                        className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize '
                       >
                         Mis pedidos
                       </a>
@@ -126,7 +118,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                     <li className='block w-full'>
                       <a
                         href='#'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                        className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize '
                       >
                         Ajustes
                       </a>
@@ -135,7 +127,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                       <button
                         type='button'
                         onClick={() => signOut()}
-                        className='block w-full px-4 py-2 text-sm bg-gray-400/70 text-white hover:bg-gray-100  '
+                        className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize  '
                       >
                         Cerrar sesion
                       </button>
@@ -146,81 +138,88 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
             </button>
           )}
           {/* fin menu user cuando hay usuario */}
+
+          <AiOutlineMenu
+            onClick={() => setOpenMenu((old) => !old)}
+            className='text-white  duration-150 transition ease-linear'
+            size={25}
+          />
         </div>
 
         {openMenu && (
-          <div className={`items-center justify-between  w-full md:flex md:w-auto md:order-1  `}>
-            <ul className='flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-slate-900 dark:border-gray-700'>
-              {!currentUser && (
-                <>
-                  <li className='flex items-center justify-start gap-3  w-full'>
+          <ul className='flex mt-3 rounded-lg flex-col items-start justify-between gap-4 bg-white py-5 w-full'>
+            {!currentUser && (
+              <>
+                <li className='flex items-center justify-start gap-3  w-full'>
+                  <a
+                    href='/auth'
+                    className='text-black  rounded md:bg-transparent md:text-orange-600 border-b w-full flex items-center pb-3 gap-3'
+                  >
                     <CiLogin className='text-white' size={20} />
-                    <a
-                      href='/auth'
-                      className='block py-2 pl-3 pr-4 text-slatebg-slate-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                    >
-                      Inicar sesion
-                    </a>
-                  </li>
-                  <li className='flex items-center justify-start gap-3  w-full'>
+                    Inicar sesion
+                  </a>
+                </li>
+                <li className='flex items-center justify-start gap-3  w-full'>
+                  <a
+                    href='/auth'
+                    className='text-black  rounded md:bg-transparent md:text-orange-600 border-b w-full flex items-center pb-3 gap-3'
+                  >
                     <AiOutlineForm className='text-white' size={20} />
-                    <a
-                      href='/auth'
-                      className='block py-2 pl-3 pr-4 text-slatebg-slate-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                    >
-                      Registrarse
-                    </a>
-                  </li>
-                </>
-              )}
+                    Registrarse
+                  </a>
+                </li>
+              </>
+            )}
 
-              <li className='flex items-center justify-start gap-3  w-full'>
+            <li className='flex items-center justify-start gap-3  w-full'>
+              <a
+                href='/carta'
+                className='text-black  rounded md:bg-transparent md:text-orange-600 border-b w-full flex items-center pb-3 gap-3 '
+              >
                 <MdOutlineRestaurantMenu className='text-white' size={20} />
-                <a
-                  href='/carta'
-                  className='block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-orange-600 md:p-0 md:dark:text-orange-600'
-                  aria-current='page'
-                >
-                  La carta
-                </a>
-              </li>
-              <li className='flex items-center justify-start gap-3  w-full'>
+                La carta
+              </a>
+            </li>
+            <li className='flex items-center justify-start gap-3  w-full'>
+              <a
+                href='#'
+                className='text-black  rounded md:bg-transparent md:text-orange-600 border-b w-full flex items-center pb-3 justify-start gap-3'
+              >
                 <AiOutlineInfoCircle className='text-white' size={20} />
-                <a
-                  href='#'
-                  className='block py-2 pl-3 pr-4 text-slatebg-slate-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                >
-                  About
-                </a>
-              </li>
-            </ul>
-          </div>
+                About
+              </a>
+            </li>
+          </ul>
         )}
 
         <section className='md:flex hidden items-center gap-6'>
           <div className='flex items-center '>
             <a
               href='/cart'
-              className='text-white hover:text-orange-600 duration-150 transition ease-linear'
+              className='text-white hover:text-black duration-150 transition ease-linear'
             >
               <AiOutlineShopping size={25} />
             </a>
           </div>
 
-          <div
-            className={`md:flex hidden items-center justify-center ${!currentUser && 'gap-10'} `}
-          >
+          <div className={`md:flex hidden items-center justify-center ${!currentUser && 'gap-5'} `}>
             {!currentUser ? (
               <>
-                <div className='flex items-center justify-center gap-3 '>
-                  <CiLogin className='text-white' size={20} />
-                  <a href='/auth' className='text-white'>
+                <div className=''>
+                  <a
+                    href='/auth'
+                    className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
+                  >
+                    <CiLogin size={25} />
                     Inicar sesion
                   </a>
                 </div>
                 <div className='flex items-center justify-center gap-3 '>
-                  <AiOutlineForm className='text-white' size={20} />
-                  <a href='/auth' className='text-white'>
+                  <a
+                    href='/auth'
+                    className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
+                  >
+                    <AiOutlineForm className='' size={25} />
                     Registrarse
                   </a>
                 </div>
@@ -228,10 +227,9 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
             ) : (
               <button
                 type='button'
-                className='flex relative  mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-2 focus:ring-white dark:focus:ring-white'
+                className='flex relative  mr-3 text-sm bg-white rounded-full md:mr-0  dark:focus:ring-white'
                 onClick={() => setOpenModalUser((old) => !old)}
               >
-                <span className='sr-only'>Open user menu</span>
                 <Image
                   width={32}
                   height={32}
@@ -243,42 +241,42 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                 {/* <!-- Dropdown menu user cuando hay usuario --> */}
                 {openModalUser && (
                   <div
-                    className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg md:rounded-md shadow md:my-0 dark:bg-gray-700 dark:divide-gray-600 flex items-start flex-col ${
+                    className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg md:rounded-md shadow md:my-0 dark:bg-white dark:divide-gray-600 flex items-start flex-col ${
                       openModalUser ? 'absolute top-0 right-8 md:-top-2 md:right-9' : ''
                     } `}
                   >
-                    <div className='px-4 py-3 flex w-full flex-col items-start'>
-                      <span className='block text-sm text-slatebg-slate-900 dark:text-white'>
+                    <div className='px-4 py-3 flex gap-2 w-full flex-col items-start'>
+                      <span className='block text-lg text-slate capitalize font-semibold  text-black'>
                         {currentUser?.name}
                       </span>
-                      <span className='block text-sm  text-gray-500  dark:text-gray-400'>
+                      <span className='block text-xs  text-black font-light'>
                         {currentUser?.email}
                       </span>
                     </div>
-                    <ul className='flex flex-col w-full items-start'>
+                    <ul className='flex flex-col w-full items-start capitalize'>
                       <li className='block w-full'>
                         <a
                           href='#'
-                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                          className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize '
                         >
-                          Dashboard
+                          Mis pedidos
                         </a>
                       </li>
                       <li className='block w-full'>
                         <a
                           href='#'
-                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                          className='block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
                         >
-                          Settings
+                          Ajustes
                         </a>
                       </li>
                       <li className='block w-full'>
                         <button
                           type='button'
                           onClick={() => signOut()}
-                          className='block w-full px-4 py-2 text-sm  text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white  '
+                          className='block w-full px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize '
                         >
-                          Sign out
+                          Cerrar sesion
                         </button>
                       </li>
                     </ul>
