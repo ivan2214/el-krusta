@@ -1,6 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
+import ImageHtml from './ImageHtml'
 
 interface ImageSkeletonProps {
   src: string
@@ -11,16 +13,18 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt }) => {
   const [cargada, setCargada] = useState(false)
 
   useEffect(() => {
-    const image = new Image() as HTMLImageElement
-    image.onload = () => {
+    const imageHtml = ImageHtml()
+    imageHtml.onload = () => {
       setCargada(true)
     }
-    image.src = src
+    imageHtml.src = src
   }, [src])
 
   return (
     <>
-      <img
+      <Image
+        width={30}
+        height={30}
         className='
           h-full 
           w-full 

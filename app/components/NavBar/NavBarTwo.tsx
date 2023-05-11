@@ -26,7 +26,13 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
       <div className=' md:w-full flex items-center flex-wrap md:flex-nowrap justify-between mx-auto px-4 py-3'>
         <div className=' flex items-center justify-center gap-5'>
           <a href='/' className='flex items-center'>
-            <img src='/images/logo.jpg' className='h-8 mr-3 rounded-full' alt='Flowbite Logo' />
+            <Image
+              width={50}
+              height={32}
+              src='/images/logo.jpg'
+              className='h-8 mr-3 rounded-full'
+              alt='Logo el Krusta'
+            />
           </a>
 
           <ul className='md:flex gap-10 hidden items-center justify-center '>

@@ -33,8 +33,13 @@ function Carousel() {
           className='carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth relative  scrollbar-hide gap-5'
         >
           {burguers.map((b) => (
-            <div>
-              <CardBurguers categoria={b.categoria} price={b?.precio} title={b?.titulo} image={b?.imagen} />
+            <div key={b.id}>
+              <CardBurguers
+                categoria={b.categoria}
+                price={b?.precio}
+                title={b?.titulo}
+                image={b?.imagen}
+              />
             </div>
           ))}
         </section>
