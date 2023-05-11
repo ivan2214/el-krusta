@@ -9,6 +9,8 @@ const nextConfig = {
       'th.bing.com',
       'www.colourbox.com',
     ],
+    unoptimized: true,
+    
   },
 }
 

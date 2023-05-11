@@ -104,12 +104,23 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                     </span>
                   </div>
                   <ul className='flex flex-col w-full items-start'>
+                    {currentUser?.admin && (
+                      <li className='block w-full'>
+                        <a
+                          href='#'
+                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
+                        >
+                          Admin
+                        </a>
+                      </li>
+                    )}
+
                     <li className='block w-full'>
                       <a
                         href='#'
                         className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                       >
-                        Dashboard
+                        Mis pedidos
                       </a>
                     </li>
                     <li className='block w-full'>
@@ -117,15 +128,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                         href='#'
                         className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                       >
-                        Settings
-                      </a>
-                    </li>
-                    <li className='block w-full'>
-                      <a
-                        href='#'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                      >
-                        Earnings
+                        Ajustes
                       </a>
                     </li>
                     <li className='block w-full'>
@@ -134,7 +137,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                         onClick={() => signOut()}
                         className='block w-full px-4 py-2 text-sm bg-gray-400/70 text-white hover:bg-gray-100  '
                       >
-                        Sign out
+                        Cerrar sesion
                       </button>
                     </li>
                   </ul>
@@ -267,14 +270,6 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
                           className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                         >
                           Settings
-                        </a>
-                      </li>
-                      <li className='block w-full'>
-                        <a
-                          href='#'
-                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                        >
-                          Earnings
                         </a>
                       </li>
                       <li className='block w-full'>
