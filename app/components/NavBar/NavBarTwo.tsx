@@ -12,6 +12,7 @@ import {
   AiOutlineShopping,
 } from 'react-icons/ai'
 import Image from 'next/image'
+import ImageSkeleton from '../ImageSkeleton'
 
 type NavBarProps = {
   currentUser: User | null
@@ -100,7 +101,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               className='flex relative  mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-2 focus:ring-white dark:focus:ring-white'
               onClick={() => setOpenModalUser((old) => !old)}
             >
-              <img
+              <ImageSkeleton
                 className='w-8 h-8 rounded-full'
                 src={currentUser?.image || 'https://via.placeholder.com/10x10?text='}
                 alt='user photo'
