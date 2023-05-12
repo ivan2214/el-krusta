@@ -50,7 +50,8 @@ const AuthForm = () => {
           toast.promise(
             signIn('credentials', {
               ...data,
-              redirect: false,
+              redirect: true,
+              callbackUrl: '/',
             }),
             { error: 'Invalid credentials', loading: 'Loading...', success: 'Success!' },
           ),
@@ -63,7 +64,8 @@ const AuthForm = () => {
         .promise(
           signIn('credentials', {
             ...data,
-            redirect: false,
+            redirect: true,
+            callbackUrl: '/',
           }),
           {
             error: 'Invalid credentials',
@@ -82,7 +84,7 @@ const AuthForm = () => {
     setIsLoading(true)
 
     toast
-      .promise(signIn(action, { redirect: false }), {
+      .promise(signIn(action, { redirect: true, callbackUrl: '/' }), {
         error: 'Invalid credentials',
         loading: 'Loading...',
         success: 'Success!',
