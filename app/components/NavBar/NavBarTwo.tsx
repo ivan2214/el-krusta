@@ -3,7 +3,7 @@ import { User } from '@prisma/client'
 import { signOut } from 'next-auth/react'
 import { CiLogin } from 'react-icons/ci'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineRestaurantMenu } from 'react-icons/md'
 import {
   AiOutlineForm,
@@ -12,6 +12,7 @@ import {
   AiOutlineShopping,
 } from 'react-icons/ai'
 import Image from 'next/image'
+import ImageSkeleton from '../ImageSkeleton'
 
 type NavBarProps = {
   currentUser: User | null
@@ -20,9 +21,30 @@ type NavBarProps = {
 const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
   const [openModalUser, setOpenModalUser] = useState(false)
   const [openMenu, setOpenMenu] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window?.pageYOffset
+      if (scrollPosition > 0 && !isScrolled) {
+        setIsScrolled(true)
+      } else if (scrollPosition === 0 && isScrolled) {
+        setIsScrolled(false)
+      }
+    }
+
+    if (!window?.addEventListener) return
+    window?.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window?.removeEventListener('scroll', handleScroll)
+    }
+  }, [isScrolled])
+
+  const navClasses = isScrolled ? 'bg-krusta shadow-lg fixed inset-x-0 z-50' : 'shadow-lg'
 
   return (
-    <nav className=' sticky z-20 top-0 border-gray-200 bg-krusta'>
+    <nav className={` ${navClasses} transition duration-300 ease-linear border-gray-200 bg-krusta`}>
       <div className=' md:w-full flex items-center flex-wrap md:flex-nowrap justify-between mx-auto px-4 py-3'>
         <div className=' flex items-center justify-center gap-5'>
           <a href='/' className='flex items-center'>
@@ -79,7 +101,7 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               className='flex relative  mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-2 focus:ring-white dark:focus:ring-white'
               onClick={() => setOpenModalUser((old) => !old)}
             >
-              <img
+              <ImageSkeleton
                 className='w-8 h-8 rounded-full'
                 src={currentUser?.image || 'https://via.placeholder.com/10x10?text='}
                 alt='user photo'

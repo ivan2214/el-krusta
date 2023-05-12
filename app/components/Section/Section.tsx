@@ -30,7 +30,7 @@ const Section: React.FC<SectionProps> = ({ text1, text2, text3, image, reverse }
             {text3 ||
               'Lorem ipsum dolor sit amet consectetur. Massa quis natoque sit quam. Eros non pellentesque elit tortor id euismod'}
           </p>
-          <button className='border flex items-center gap-2 justify-center rounded-3xl bg-white text-gray-400 px-5 py-2'>
+          <button className='border flex items-center gap-2 justify-center rounded-3xl bg-white hover:bg-krusta transition duration-200 ease-linear hover:text-white text-gray-500 px-5 py-2'>
             <p className=''>Explorar mas</p>
             <span className='h-full '>
               <HiOutlineArrowRight />

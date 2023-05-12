@@ -32,9 +32,10 @@ function Carousel() {
           id='content'
           className='carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth relative  scrollbar-hide gap-5'
         >
-          {burguers?.slice(0,5).map((b) => (
+          {burguers?.slice(0, 5).map((b) => (
             <div key={b.id}>
               <CardBurguers
+                burger={b}
                 categoria={b.categoria}
                 price={b?.precio}
                 title={b?.titulo}

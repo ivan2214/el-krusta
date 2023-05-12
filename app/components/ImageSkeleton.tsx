@@ -6,10 +6,11 @@ import ImageHtml from './ImageHtml'
 
 interface ImageSkeletonProps {
   src: string
-  alt: string
+  alt?: string
+  className?: string
 }
 
-const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt }) => {
+const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt, className }) => {
   const [cargada, setCargada] = useState(false)
 
   useEffect(() => {
@@ -25,17 +26,17 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt }) => {
       <Image
         width={1280}
         height={720}
-        className='
-          h-full 
-          w-full 
-          object-cover 
-          max-h-52
-          mx-auto
-          
-         
-        '
+        className={`${
+          className
+            ? className
+            : `h-full 
+        w-full 
+        object-cover 
+        max-h-52
+        mx-auto`
+        }`}
         src={cargada ? src : 'https://via.placeholder.com/10x10?text='}
-        alt={alt}
+        alt={alt || "asdasdas"}
       />
       {!cargada && <div className=' h-full w-full animate-pulse bg-gray-900 opacity-50' />}
     </>

@@ -10,15 +10,14 @@ const Home = async () => {
       {/* <NavBar currentUser={currentUser} /> */}
       <Hero />
       <Services />
-      <Section image='/images/burguer.jpg' />
       <Section
         reverse={true}
-        image='/images/burguer2.jpg'
-        text1='For when only a donut will do'
-        text2='Nuestras donas están hechas con amor y mucha azúcar.'
-        text3='Lorem ipsum dolor sit amet consectetur. Massa quis natoque sit quam. 
-Eros non pellentesque elit tortor id euismod.'
+        image='/images/muchas-burguers.jpeg'
+        text1='¡Saboreá un martes, jueves o viernes, cualquier día!'
+        text2='En El-Krusta, nuestras hamburguesas están hechas con amor y mucho sabor.'
+        text3='¡Pedí ahora y saboreá la experiencia El Krusta en tu hogar!'
       />
+      <Section image='/images/burguer.jpg' />
     </main>
   )
 }
