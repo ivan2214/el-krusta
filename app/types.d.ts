@@ -6,5 +6,5 @@ export interface Burguer {
   precio: number;
   ingredientes: string[];
   imagen: string;
-  quantity?:number
+  quantity:number 
 }
