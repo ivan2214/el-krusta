@@ -1,6 +1,8 @@
 import React from 'react'
 import ImageSkeleton from '../ImageSkeleton'
 import { AiOutlineHeart, AiOutlineShopping } from 'react-icons/ai'
+import { useCartStore } from '@/app/store/useCartStore'
+import { Burguer } from '@/app/types'
 
 type CardBurguersProps = {
   title: string
@@ -8,6 +10,7 @@ type CardBurguersProps = {
   image?: string
   categoria?: string
   ingredientes?: string[]
+  burger: Burguer
 }
 
 const CardBurguers: React.FC<CardBurguersProps> = ({
@@ -16,7 +19,9 @@ const CardBurguers: React.FC<CardBurguersProps> = ({
   image,
   categoria,
   ingredientes,
+  burger,
 }) => {
+  const addCart = useCartStore((s) => s.addToCart)
   return (
     <article className='w-72 text-gray-700 bg-white min-h-[10rem]  shadow-lg rounded-md border overflow-hidden relative '>
       <ImageSkeleton src={image || 'https://via.placeholder.com/10x10?text='} alt='asdasd' />
@@ -48,7 +53,10 @@ const CardBurguers: React.FC<CardBurguersProps> = ({
 
         {/* cart */}
         <div className='flex justify-end'>
-          <button className='text-black hover:text-orange-600 duration-150 transition ease-linear'>
+          <button
+            onClick={() => addCart(burger)}
+            className='text-black hover:text-orange-600 duration-150 transition ease-linear'
+          >
             <AiOutlineShopping size={30} />
           </button>
         </div>

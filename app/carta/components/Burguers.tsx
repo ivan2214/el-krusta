@@ -17,6 +17,7 @@ const Burguers = (props: Props) => {
         {burguersAcortadas?.map((b) => (
           <div key={b.id}>
             <CardBurguers
+              burger={b}
               price={b.precio}
               title={b.titulo}
               image={b.imagen}
