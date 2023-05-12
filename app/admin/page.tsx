@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 type Props = {}
@@ -527,7 +528,9 @@ const Page = () => {
                       <li className='py-3 sm:py-4'>
                         <div className='flex items-center space-x-4'>
                           <div className='flex-shrink-0'>
-                            <img
+                            <Image
+                              width={48}
+                              height={48}
                               className='h-8 w-8 rounded-full'
                               src='https://demo.themesberg.com/windster/images/users/neil-sims.png'
                               alt='Neil image'
@@ -553,7 +556,9 @@ const Page = () => {
                       <li className='py-3 sm:py-4'>
                         <div className='flex items-center space-x-4'>
                           <div className='flex-shrink-0'>
-                            <img
+                            <Image
+                              width={48}
+                              height={48}
                               className='h-8 w-8 rounded-full'
                               src='https://demo.themesberg.com/windster/images/users/bonnie-green.png'
                               alt='Neil image'
@@ -581,7 +586,9 @@ const Page = () => {
                       <li className='py-3 sm:py-4'>
                         <div className='flex items-center space-x-4'>
                           <div className='flex-shrink-0'>
-                            <img
+                            <Image
+                              width={48}
+                              height={48}
                               className='h-8 w-8 rounded-full'
                               src='https://demo.themesberg.com/windster/images/users/michael-gough.png'
                               alt='Neil image'
@@ -609,7 +616,9 @@ const Page = () => {
                       <li className='py-3 sm:py-4'>
                         <div className='flex items-center space-x-4'>
                           <div className='flex-shrink-0'>
-                            <img
+                            <Image
+                              width={48}
+                              height={48}
                               className='h-8 w-8 rounded-full'
                               src='https://demo.themesberg.com/windster/images/users/thomas-lean.png'
                               alt='Neil image'
@@ -637,7 +646,9 @@ const Page = () => {
                       <li className='pt-3 sm:pt-4 pb-0'>
                         <div className='flex items-center space-x-4'>
                           <div className='flex-shrink-0'>
-                            <img
+                            <Image
+                              width={48}
+                              height={48}
                               className='h-8 w-8 rounded-full'
                               src='https://demo.themesberg.com/windster/images/users/lana-byrd.png'
                               alt='Neil image'
