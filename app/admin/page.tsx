@@ -36,7 +36,7 @@ const Page = () => {
                           type='text'
                           name='email'
                           id='mobile-search'
-                          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5'
+                          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:ring-cyan-600 block w-full pl-10 p-2.5'
                           placeholder='Search'
                         />
                       </div>
@@ -930,8 +930,6 @@ const Page = () => {
           </p>
         </div>
       </div>
-      <script async defer src='https://buttons.github.io/buttons.js'></script>
-      <script src='https://demo.themesberg.com/windster/app.bundle.js'></script>
     </div>
   )
 }
