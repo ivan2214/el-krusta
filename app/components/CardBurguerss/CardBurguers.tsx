@@ -1,14 +1,17 @@
 import React from 'react'
 import ImageSkeleton from '../ImageSkeleton'
-import { AiOutlineHeart, AiOutlineShopping } from 'react-icons/ai'
+import { AiOutlineShopping } from 'react-icons/ai'
 import { useCartStore } from '@/app/store/useCartStore'
 import { Burguer } from '@/app/types'
+import { IoMdHeart } from 'react-icons/io'
+import { useRouter } from 'next/navigation'
 
 type CardBurguersProps = {
   burguer: Burguer
 }
 
 const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
+  const router = useRouter()
   const addCart = useCartStore((s) => s.addToCart)
   const precioOriginal = burguer.precio
   const descuento = burguer.descuento || 0 // Si el descuento no está definido, se considera que es 0%
@@ -17,7 +20,9 @@ const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
   return (
     <article className='w-72 text-gray-700 bg-white min-h-[10rem]  shadow-lg rounded-md border overflow-hidden relative '>
       <ImageSkeleton
-        src={burguer.imagen || 'https://via.placeholder.com/10x10?text='}
+        onClick
+        id={burguer?.id}
+        src={burguer?.imagen || 'https://via.placeholder.com/10x10?text='}
         alt='asdasd'
       />
 
@@ -70,8 +75,8 @@ const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
       {/* favorite */}
 
       <div>
-        <button className='hover:text-orange-600 duration-150 transition ease-linear absolute top-0 z-20 right-0'>
-          <AiOutlineHeart size={30} />
+        <button className='text-gray-300 hover:text-red-500 absolute top-0 z-20 right-0'>
+          <IoMdHeart className='w-10 h-10' />
         </button>
       </div>
     </article>
