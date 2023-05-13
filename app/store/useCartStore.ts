@@ -1,20 +1,22 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-
-import { Burguer } from '../types'
+import burguersJSON from '@/app/data/burguers.json'
+import { Burguer, BurguerCart } from '../types'
 import { toast } from 'react-hot-toast'
+import { BurguerContext } from '../context/BurguersContext'
+import { useContext } from 'react'
 
 interface State {
-  cart: Burguer[]
+  cart: BurguerCart[] | []
   totalItems: number
   totalPrice: number
 }
 
 interface Actions {
-  addToCart: (Item: Burguer) => void
-  removeFromCart: (Item: Burguer) => void
-  incrementCartItem: (Item: Burguer) => void
-  decrementCartItem: (Item: Burguer) => void
+  addToCart: (id: Number) => void
+  removeFromCart: (id: Number) => void
+  incrementCartItem: (id: Number) => void
+  decrementCartItem: (id: Number) => void
 }
 
 const INITIAL_STATE: State = {
@@ -23,17 +25,24 @@ const INITIAL_STATE: State = {
   totalPrice: 0,
 }
 
+function getBurguerById(id: Number) {
+  const burguers = burguersJSON
+  const burguer = burguers.find((burguer) => burguer?.id === id)
+  return burguer
+}
+
 export const useCartStore = create(
   persist<State & Actions>(
     (set, get) => ({
       cart: INITIAL_STATE.cart,
       totalItems: INITIAL_STATE.totalItems,
       totalPrice: INITIAL_STATE.totalPrice,
-      addToCart: (burguer: Burguer) => {
+      addToCart: (id: Number) => {
         const cart = get().cart
-        const cartItem = cart.find((item) => item.id === burguer.id)
+        const burguerInCart = cart.find((item) => item.id === id)
+        const burguer = getBurguerById(id)
 
-        if (cartItem) {
+        if (burguerInCart && burguer) {
           const updatedCart = cart.map((item) =>
             item.id === burguer.id ? { ...item, quantity: (item.quantity as number) + 1 } : item,
           )
@@ -42,7 +51,7 @@ export const useCartStore = create(
             totalItems: state.totalItems + 1,
             totalPrice: state.totalPrice + burguer.precio,
           }))
-        } else {
+        } else if (!burguerInCart && burguer) {
           const updatedCart = [...cart, { ...burguer, quantity: 1 }]
 
           set((state) => ({
@@ -53,47 +62,55 @@ export const useCartStore = create(
         }
         toast.success('añadida!!')
       },
-      removeFromCart: (burguer: Burguer) => {
-        set((state) => ({
-          cart: state.cart.filter((item) => item.id !== burguer.id),
-          totalItems: state.totalItems - 1,
-          totalPrice: state.totalPrice - burguer.precio,
-        }))
+      removeFromCart: (id: Number) => {
+        const burguer = getBurguerById(id)
+        if (burguer)
+          set((state) => ({
+            cart: state.cart.filter((item) => item.id !== id),
+            totalItems: state.totalItems - 1,
+            totalPrice: state.totalPrice - burguer.precio,
+          }))
         toast.success('removida')
       },
-      incrementCartItem: (burguer: Burguer) => {
-        set((state) => {
-          const updatedCart = state.cart.map((item) =>
-            item.id === burguer.id ? { ...item, quantity: (item.quantity as number) + 1 } : item,
-          )
-          return {
-            cart: updatedCart,
-            totalItems: state.totalItems + 1,
-            totalPrice: state.totalPrice + burguer.precio,
-          }
-        })
+      incrementCartItem: (id: Number) => {
+        const burguer = getBurguerById(id)
+
+        if (burguer)
+          set((state) => {
+            const updatedCart = state.cart.map((item) =>
+              item.id === burguer.id ? { ...item, quantity: (item.quantity as number) + 1 } : item,
+            )
+            return {
+              cart: updatedCart,
+              totalItems: state.totalItems + 1,
+              totalPrice: state.totalPrice + burguer.precio,
+            }
+          })
         toast.success('Cantidad aumentada!')
       },
 
-      decrementCartItem: (burguer: Burguer) => {
-        set((state) => {
-          const updatedCart = state.cart.map((item) =>
-            item.id === burguer.id
-              ? {
-                  ...item,
-                  quantity: (item.quantity as number) > 1 ? (item.quantity as number) - 1 : 1,
-                }
-              : item,
-          )
-          return {
-            cart: updatedCart,
-            totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0,
-            totalPrice:
-              state.totalPrice > burguer.precio
-                ? state.totalPrice - burguer.precio
-                : state.totalPrice,
-          }
-        })
+      decrementCartItem: (id: Number) => {
+        const burguer = getBurguerById(id)
+
+        if (burguer)
+          set((state) => {
+            const updatedCart = state.cart.map((item) =>
+              item.id === burguer.id
+                ? {
+                    ...item,
+                    quantity: (item.quantity as number) > 1 ? (item.quantity as number) - 1 : 1,
+                  }
+                : item,
+            )
+            return {
+              cart: updatedCart,
+              totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0,
+              totalPrice:
+                state.totalPrice > burguer.precio
+                  ? state.totalPrice - burguer.precio
+                  : state.totalPrice,
+            }
+          })
         toast.success('Cantidad reducida!')
       },
     }),

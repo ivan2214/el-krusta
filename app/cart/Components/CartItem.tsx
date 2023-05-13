@@ -28,7 +28,7 @@ export default function CartItem({ burguer }: Props) {
         <div className='mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
           <div className='flex items-center  border-gray-100'>
             <button
-              onClick={() => decrementCartItem(burguer)}
+              onClick={() => decrementCartItem(burguer.id)}
               className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-krusta hover:text-orange-50'
             >
               {' '}
@@ -41,7 +41,7 @@ export default function CartItem({ burguer }: Props) {
               min='1'
             />
             <button
-              onClick={() => incrementCartItem(burguer)}
+              onClick={() => incrementCartItem(burguer.id)}
               className='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-krusta hover:text-orange-50'
             >
               {' '}
@@ -52,7 +52,7 @@ export default function CartItem({ burguer }: Props) {
             <p className='text-base rounded-xl font-normal bg-gray-200 px-4 py-1 '>
               {burguer.precio}
             </p>
-            <button className='' onClick={() => removeFromCart(burguer)}>
+            <button className='' onClick={() => removeFromCart(burguer.id)}>
               <AiOutlineClose className='text-red-500 text-xl' size={25} />
             </button>
           </div>
