@@ -13,14 +13,7 @@ type CardBurguersProps = {
   burger: Burguer
 }
 
-const CardBurguers: React.FC<CardBurguersProps> = ({
-  title,
-  price,
-  image,
-  categoria,
-  ingredientes,
-  burger,
-}) => {
+const CardBurguers: React.FC<CardBurguersProps> = ({ title, price, image, categoria, burger }) => {
   const addCart = useCartStore((s) => s.addToCart)
   return (
     <article className='w-72 text-gray-700 bg-white min-h-[10rem]  shadow-lg rounded-md border overflow-hidden relative '>
