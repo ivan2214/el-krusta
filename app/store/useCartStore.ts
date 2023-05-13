@@ -6,8 +6,8 @@ import { toast } from 'react-hot-toast'
 import { BurguerContext } from '../context/BurguersContext'
 import { useContext } from 'react'
 
-interface State {
-  cart: BurguerCart[] | []
+export interface State {
+  cart: BurguerCart[]
   totalItems: number
   totalPrice: number
 }

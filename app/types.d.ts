@@ -9,6 +9,13 @@ export interface Burguer {
   quantity?: number
 }
 
-export interface BurguerCart extends Burguer {
+export interface BurguerCart {
+  id: number
+  titulo: string
+  descripcion: string
+  categoria: string
+  precio: number
+  ingredientes: string[]
+  imagen: string
   quantity: number
 }

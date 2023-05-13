@@ -7,7 +7,7 @@ import { IoMdArrowBack } from 'react-icons/io'
 import { useState } from 'react'
 import { formatAsARS } from '../utils/formatNumber'
 import ButtonLoading from '../components/ButtonLoading'
-import { BurguerCart } from '../types'
+import { Burguer, BurguerCart } from '../types'
 
 const Page = () => {
   const cart: BurguerCart[] = useFromStore(useCartStore, (state) => state.cart)
