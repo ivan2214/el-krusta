@@ -1,10 +1,13 @@
-import { BurguerCart } from '../../types.d'
+import { FaTrashAlt } from 'react-icons/fa'
+
+import { Burguer } from '../../types.d'
+import Image from 'next/image'
 import { useCartStore } from '@/app/store/useCartStore'
 import { AiOutlineClose } from 'react-icons/ai'
 import ImageSkeleton from '@/app/components/ImageSkeleton'
 
 interface Props {
-  burguer: BurguerCart
+  burguer: Burguer
 }
 
 export default function CartItem({ burguer }: Props) {
@@ -15,11 +18,7 @@ export default function CartItem({ burguer }: Props) {
   return (
     <div className='justify-between rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
       {/* <img src={burguer.imagen} alt='product-image' className='w-full rounded-lg sm:w-40' /> */}
-      <ImageSkeleton
-        className='w-full rounded-lg sm:w-40'
-        src={burguer?.imagen || 'https://via.placeholder.com/10x10?text='}
-        alt='asdasd'
-      />
+      <ImageSkeleton className='w-full rounded-lg sm:w-40'  src={burguer?.imagen || 'https://via.placeholder.com/10x10?text='} alt='asdasd' />
       <div className='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
         <div className='mt-5 sm:mt-0'>
           <h2 className='text-lg font-bold text-gray-900'>{burguer.titulo}</h2>
@@ -28,7 +27,7 @@ export default function CartItem({ burguer }: Props) {
         <div className='mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
           <div className='flex items-center  border-gray-100'>
             <button
-              onClick={() => decrementCartItem(burguer.id)}
+              onClick={() => decrementCartItem(burguer)}
               className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-krusta hover:text-orange-50'
             >
               {' '}
@@ -41,7 +40,7 @@ export default function CartItem({ burguer }: Props) {
               min='1'
             />
             <button
-              onClick={() => incrementCartItem(burguer.id)}
+              onClick={() => incrementCartItem(burguer)}
               className='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-krusta hover:text-orange-50'
             >
               {' '}
@@ -52,7 +51,7 @@ export default function CartItem({ burguer }: Props) {
             <p className='text-base rounded-xl font-normal bg-gray-200 px-4 py-1 '>
               {burguer.precio}
             </p>
-            <button className='' onClick={() => removeFromCart(burguer.id)}>
+            <button className='' onClick={() => removeFromCart(burguer)}>
               <AiOutlineClose className='text-red-500 text-xl' size={25} />
             </button>
           </div>

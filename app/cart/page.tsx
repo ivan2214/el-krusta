@@ -7,10 +7,10 @@ import { IoMdArrowBack } from 'react-icons/io'
 import { useState } from 'react'
 import { formatAsARS } from '../utils/formatNumber'
 import ButtonLoading from '../components/ButtonLoading'
-import { Burguer, BurguerCart } from '../types'
+import { Burguer } from '../types'
 
 const Page = () => {
-  const cart: BurguerCart[] = useFromStore(useCartStore, (state) => state.cart)
+  const cart: Burguer[] = useFromStore(useCartStore, (state) => state.cart)
   const totalPrice = useFromStore(useCartStore, (state) => state.totalPrice)
   const [procesCompra, setProcesCompra] = useState(false)
   console.log(cart)
@@ -18,7 +18,7 @@ const Page = () => {
   let total = 0
   if (cart) {
     total = cart?.reduce(
-      (acc: any, burguer: BurguerCart) => acc + burguer.precio * (burguer.quantity as number),
+      (acc: any, burguer: Burguer) => acc + burguer.precio * (burguer.quantity as number),
       0,
     )
   }
@@ -26,13 +26,13 @@ const Page = () => {
   const text =
     `📝Hola! Te paso mi pedido: 
 ${cart.reduce(
-  (message, item: BurguerCart, indx) =>
+  (message, item: Burguer, indx) =>
     message.concat(
       `\n🍔🍟 Pedido ${indx + 1}: \n\n
      - ${item?.titulo}  
      - Cantidad: ${item?.quantity}
      - Precio por unidad: ${formatAsARS(item?.precio)}
-     - Precio en total por cantidad: ${formatAsARS(Number(item?.precio * item?.quantity))}
+     - Precio en total por cantidad: ${formatAsARS(Number(item?.precio * Number(item?.quantity)))}
   \n -------------*------------\n`,
     ),
   ``,

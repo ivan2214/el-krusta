@@ -43,7 +43,7 @@ const CardBurguers: React.FC<CardBurguersProps> = ({burguer
         {/* cart */}
         <div className='flex justify-end'>
           <button
-            onClick={() => addCart(burguer.id)}
+            onClick={() => addCart(burguer)}
             className='text-black hover:text-orange-600 duration-150 transition ease-linear'
           >
             <AiOutlineShopping size={30} />
