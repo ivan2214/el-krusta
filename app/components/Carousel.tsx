@@ -34,13 +34,7 @@ function Carousel() {
         >
           {burguers?.slice(0, 5).map((b) => (
             <div key={b.id}>
-              <CardBurguers
-                burger={b}
-                categoria={b.categoria}
-                price={b?.precio}
-                title={b?.titulo}
-                image={b?.imagen}
-              />
+              <CardBurguers burguer={b} />
             </div>
           ))}
         </section>

@@ -16,15 +16,7 @@ const Burguers = (props: Props) => {
       <section className='grid py-20 lg:p-20 md:p-10  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-16 overflow-hidden place-items-center'>
         {burguersAcortadas?.map((b) => (
           <div key={b.id}>
-            <CardBurguers
-              burger={b}
-              price={b.precio}
-              title={b.titulo}
-              image={b.imagen}
-              categoria={b.categoria}
-              ingredientes={b.ingredientes}
-              key={b.id}
-            />
+            <CardBurguers burguer={b} />
           </div>
         ))}
       </section>

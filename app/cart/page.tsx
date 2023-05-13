@@ -3,20 +3,48 @@
 import { useCartStore } from '../store/useCartStore'
 import useFromStore from '../hooks/useFormStore'
 import CartItem from './Components/CartItem'
-import { FaWhatsapp } from 'react-icons/fa'
 import { IoMdArrowBack } from 'react-icons/io'
+import { useEffect, useState } from 'react'
+import { formatAsARS } from '../utils/formatNumber'
+import ButtonLoading from '../components/ButtonLoading'
+import { Burguer } from '../types'
+import { toast } from 'react-hot-toast'
 
 const Page = () => {
-  const cart = useFromStore(useCartStore, (state) => state.cart)
+  const cart: Burguer[] = useFromStore(useCartStore, (state) => state.cart)
+  const totalPrice = useFromStore(useCartStore, (state) => state.totalPrice)
+  const [procesCompra, setProcesCompra] = useState(false)
   console.log(cart)
 
   let total = 0
   if (cart) {
-    total = cart.reduce((acc, burguer) => acc + burguer.precio * (burguer.quantity as number), 0)
+    total = cart?.reduce(
+      (acc: any, burguer: Burguer) => acc + burguer.precio * (burguer.quantity as number),
+      0,
+    )
   }
 
-  const checkout = () => {
-    //checkout por wp
+  const text =
+    `📝Hola! Te paso mi pedido: 
+${cart.reduce(
+  (message, item: Burguer, indx) =>
+    message.concat(
+      `\n🍔🍟 Pedido ${indx + 1}: \n\n
+     - ${item?.titulo}  
+     - Cantidad: ${item?.quantity}
+     - Precio por unidad: ${formatAsARS(item?.precio)}
+     - Precio en total por cantidad: ${formatAsARS(Number(item?.precio * Number(item?.quantity)))}
+  \n -------------*------------\n`,
+    ),
+  ``,
+)}
+` + `\n💲 Total: ${formatAsARS(Number(totalPrice))}`
+
+  const purchaseCart = async () => {
+    if (!cart.length) return toast.error('Agregar items al carrito para continuar!')
+    setProcesCompra(true)
+    window.open(`https://api.whatsapp.com/send?phone=3812516597&text=${encodeURIComponent(text)}`)
+    setTimeout(() => setProcesCompra(false), 1000)
   }
 
   return (
@@ -58,14 +86,25 @@ const Page = () => {
               <p className='text-sm text-gray-700'>Iva incluido</p>
             </div>
           </div>
-          <button
+          {procesCompra ? (
+            <ButtonLoading />
+          ) : (
+            <button
+              disabled={!cart?.length}
+              onClick={purchaseCart}
+              className='mt-6 w-full rounded-md bg-green-500 py-1.5 font-medium text-green-50 flex items-center justify-center gap-5 capitalize hover:bg-green-600'
+            >
+              Seguir Compra en Wp
+            </button>
+          )}
+          {/*   <button
             onClick={checkout}
             disabled={!cart?.length}
             className='mt-6 w-full rounded-md bg-green-500 py-1.5 font-medium text-green-50 flex items-center justify-center gap-5 capitalize hover:bg-green-600'
           >
             <FaWhatsapp size={20} />
             Comprar
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { SessionProvider } from 'next-auth/react'
 import getCurrentUser from './actions/getCurrentUser'
 import Footer from './components/Footer/Footer'
 import NavBarTwo from './components/NavBar/NavBarTwo'
@@ -19,8 +20,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang='es'>
-      <AuthContext>
-        <body className='container mx-auto'>
+      <body className='container mx-auto'>
+        <AuthContext>
           <BurguerContextProvider>
             <CategorieContextProvider>
               <IngredientesContextProvider>
@@ -31,8 +32,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               </IngredientesContextProvider>
             </CategorieContextProvider>
           </BurguerContextProvider>
-        </body>
-      </AuthContext>
+        </AuthContext>
+      </body>
     </html>
   )
 }

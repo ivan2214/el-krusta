@@ -7,4 +7,5 @@ export interface Burguer {
   ingredientes: string[];
   imagen: string;
   quantity?:number
+  descuento?:number
 }
