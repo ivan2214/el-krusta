@@ -7,7 +7,44 @@
     "precio": 8.99,
     "ingredientes": ["Carne de vacuno", "Lechuga", "Tomate", "Cebolla", "Salsa especial"],
     "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
-    "descuento": 10
+    "descuento": 10,
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 2,
@@ -23,7 +60,44 @@
       "Salsa BBQ"
     ],
     "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
-    "descuento": 3
+    "descuento": 3,
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 3,
@@ -66,7 +140,44 @@
       "Salsa especial"
     ],
     "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
-    "descuento": 25
+    "descuento": 25,
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 7,
@@ -75,7 +186,44 @@
     "categoria": "Especiales",
     "precio": 13.99,
     "ingredientes": ["Carne de vacuno", "Champiñones salteados", "Queso suizo", "Mayonesa de ajo"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 8,
@@ -84,7 +232,44 @@
     "categoria": "Pescado",
     "precio": 15.99,
     "ingredientes": ["Hamburguesa de salmón", "Lechuga", "Tomate", "Salsa tártara"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 9,
@@ -93,7 +278,44 @@
     "categoria": "Carnes",
     "precio": 12.99,
     "ingredientes": ["Hamburguesa de cordero", "Lechuga", "Tomate", "Cebolla", "Salsa de yogur"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 10,
@@ -102,7 +324,44 @@
     "categoria": "Especiales",
     "precio": 13.99,
     "ingredientes": ["Carne de vacuno", "Aguacate", "Queso feta", "Salsa de cilantro"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 11,
@@ -111,7 +370,44 @@
     "categoria": "Especiales",
     "precio": 11.99,
     "ingredientes": ["Carne de vacuno", "Huevo frito", "Queso cheddar", "Salsa especial"],
-    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 12,
@@ -120,7 +416,44 @@
     "categoria": "Veganas",
     "precio": 10.99,
     "ingredientes": ["Hamburguesa de tofu", "Lechuga", "Tomate", "Cebolla", "Mayonesa vegana"],
-    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 13,
@@ -129,7 +462,44 @@
     "categoria": "Especiales",
     "precio": 13.99,
     "ingredientes": ["Carne de vacuno", "Jalapeños", "Queso cheddar", "Salsa barbacoa"],
-    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 14,
@@ -138,7 +508,44 @@
     "categoria": "Pollo",
     "precio": 11.99,
     "ingredientes": ["Pechuga de pollo empanizada", "Lechuga", "Tomate", "Mayonesa de mostaza"],
-    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 15,
@@ -147,7 +554,44 @@
     "categoria": "Especiales",
     "precio": 14.99,
     "ingredientes": ["Carne de vacuno", "Queso azul", "Cebolla caramelizada", "Rúcula"],
-    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg"
+    "imagen": "https://www.colourbox.com/preview/3264794-two-cheeseburgers-with-fries-on-a-white-background.jpg",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 16,
@@ -161,7 +605,44 @@
       "Queso cheddar",
       "Salsa de miel y mostaza"
     ],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 17,
@@ -170,7 +651,44 @@
     "categoria": "Veganas",
     "precio": 10.99,
     "ingredientes": ["Hamburguesa de berenjena", "Lechuga", "Tomate", "Cebolla", "Mayonesa vegana"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 18,
@@ -179,7 +697,44 @@
     "categoria": "Especiales",
     "precio": 14.99,
     "ingredientes": ["Carne de vacuno", "Huevo frito", "Queso cheddar", "Salsa tártara"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 19,
@@ -188,7 +743,44 @@
     "categoria": "Vegetarianas",
     "precio": 11.99,
     "ingredientes": ["Hamburguesa vegetariana", "Queso cheddar", "Lechuga", "Tomate", "Mayonesa"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   },
   {
     "id": 20,
@@ -197,6 +789,43 @@
     "categoria": "Pescado",
     "precio": 13.99,
     "ingredientes": ["Hamburguesa de salmón", "Lechuga", "Tomate", "Cebolla", "Mayonesa de eneldo"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "rating": 4.4,
+    "reviews": 96,
+    "hrefReviews": "#link",
+    "features": [
+      { "name": "Materials", "details": "Bamboo, Glass" },
+      { "name": "Teapot", "details": "7\"L x 4.5\"W x 4.5\"H" },
+      { "name": "Capacity", "details": "650 ml." },
+      { "name": "Cleaning", "details": "Hand Wash" }
+    ],
+    "colors": [
+      { "name": "Black", "class": "bg-black" },
+      { "name": "White", "class": "bg-white" },
+      { "name": "Blue", "class": "bg-sky-400" }
+    ],
+    "sizes": [
+      { "name": "Size 1", "inStock": true },
+      { "name": "Size 2", "inStock": true },
+      { "name": "Size 3", "inStock": false }
+    ],
+    "pictures": [
+      {
+        "src": "https://fancytailwind.com/static/teapot1-e0cd61cf4337f086df22de4c2f646db0.webp",
+        "alt": "Teapot model"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot2-9482ecf0cb04a9cbeacd01c7c869c970.webp",
+        "alt": "Teapot to pour water"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot3-0596668cb1f92d4f0463e37d3ee69b36.webp",
+        "alt": "Teapot for breakfast"
+      },
+      {
+        "src": "https://fancytailwind.com/static/teapot4-73239d591549fa281e07e14a5e9939fb.webp",
+        "alt": "Teapot on warming machine"
+      }
+    ]
   }
 ]

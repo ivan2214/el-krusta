@@ -67,6 +67,14 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
           <section className='flex items-center justify-center gap-6'>
             <div className='flex items-center '>
               <a
+                href='/carta'
+                className='text-white hover:text-black duration-150 transition ease-linear'
+              >
+                <MdOutlineRestaurantMenu size={25} />
+              </a>
+            </div>
+            <div className='flex items-center '>
+              <a
                 href='/cart'
                 className='text-white hover:text-black duration-150 transition ease-linear'
               >
