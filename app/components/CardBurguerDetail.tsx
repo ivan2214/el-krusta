@@ -120,7 +120,9 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
               >
                 <option value=''>Color</option>
                 {burguerDetail?.colors?.map((color) => (
-                  <option value={color.name}>{color.name}</option>
+                  <option key={color.name} value={color.name}>
+                    {color.name}
+                  </option>
                 ))}
               </select>
               {/* :::Size */}
@@ -134,7 +136,9 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
               >
                 <option value=''>Size</option>
                 {burguerDetail?.sizes?.map((size) => (
-                  <option value={size.name}>{size.name}</option>
+                  <option key={size.name} value={size.name}>
+                    {size.name}
+                  </option>
                 ))}
               </select>
             </div>
