@@ -6,7 +6,8 @@
     "categoria": "Clásicas",
     "precio": 8.99,
     "ingredientes": ["Carne de vacuno", "Lechuga", "Tomate", "Cebolla", "Salsa especial"],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "descuento": 10
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
       "Cebolla caramelizada",
       "Salsa BBQ"
     ],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "descuento": 3
   },
   {
     "id": 3,
@@ -63,7 +65,8 @@
       "Tomate",
       "Salsa especial"
     ],
-    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0"
+    "imagen": "https://th.bing.com/th/id/R.ba56a9f0a292290584019cb429208c6f?rik=fSoKIWJDVzeshA&pid=ImgRaw&r=0",
+    "descuento": 25
   },
   {
     "id": 7,

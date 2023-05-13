@@ -8,12 +8,18 @@ type CardBurguersProps = {
   burguer: Burguer
 }
 
-const CardBurguers: React.FC<CardBurguersProps> = ({burguer
-}) => {
+const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
   const addCart = useCartStore((s) => s.addToCart)
+  const precioOriginal = burguer.precio
+  const descuento = burguer.descuento || 0 // Si el descuento no está definido, se considera que es 0%
+  const precioConDescuento = precioOriginal - (precioOriginal * descuento) / 100
+
   return (
     <article className='w-72 text-gray-700 bg-white min-h-[10rem]  shadow-lg rounded-md border overflow-hidden relative '>
-      <ImageSkeleton src={burguer.imagen || 'https://via.placeholder.com/10x10?text='} alt='asdasd' />
+      <ImageSkeleton
+        src={burguer.imagen || 'https://via.placeholder.com/10x10?text='}
+        alt='asdasd'
+      />
 
       <div className='p-5 flex flex-col gap-3'>
         {/* badge */}
@@ -31,12 +37,22 @@ const CardBurguers: React.FC<CardBurguersProps> = ({burguer
         {/* precio */}
 
         <div>
-          <span className=' text-lg font-bold '>${Math.floor(burguer.precio - burguer.precio * 0.1)}</span>
+          {burguer.descuento && (
+            <span className=' text-lg font-bold '>${Math.floor(precioConDescuento)}</span>
+          )}
           <div className='flex items-center gap-2 mt-1'>
-            <span className='text-sm  line-through opacity-50'>${burguer.precio || '120'}</span>
-            <span className='bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white capitalize'>
-              descuento del 10%
+            <span
+              className={`  ${
+                burguer.descuento ? 'line-through opacity-50 text-sm' : 'text-lg font-bold'
+              } `}
+            >
+              ${burguer.precio || '120'}
             </span>
+            {burguer.descuento && (
+              <span className='bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white capitalize'>
+                descuento del %{burguer.descuento}
+              </span>
+            )}
           </div>
         </div>
 

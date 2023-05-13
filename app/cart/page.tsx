@@ -4,10 +4,11 @@ import { useCartStore } from '../store/useCartStore'
 import useFromStore from '../hooks/useFormStore'
 import CartItem from './Components/CartItem'
 import { IoMdArrowBack } from 'react-icons/io'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { formatAsARS } from '../utils/formatNumber'
 import ButtonLoading from '../components/ButtonLoading'
 import { Burguer } from '../types'
+import { toast } from 'react-hot-toast'
 
 const Page = () => {
   const cart: Burguer[] = useFromStore(useCartStore, (state) => state.cart)
@@ -40,8 +41,9 @@ ${cart.reduce(
 ` + `\n💲 Total: ${formatAsARS(Number(totalPrice))}`
 
   const purchaseCart = async () => {
+    if (!cart.length) return toast.error('Agregar items al carrito para continuar!')
     setProcesCompra(true)
-    /* window.open(`https://wa.me/3812516597?text=${encodeURIComponent(text)}`) */
+    window.open(`https://api.whatsapp.com/send?phone=3812516597&text=${encodeURIComponent(text)}`)
     setTimeout(() => setProcesCompra(false), 1000)
   }
 
@@ -87,16 +89,13 @@ ${cart.reduce(
           {procesCompra ? (
             <ButtonLoading />
           ) : (
-            <a
-              href={`https://api.whatsapp.com/send?phone=3812516597&text=${encodeURIComponent(
-                text,
-              )}`}
-              target='_blank'
+            <button
+              disabled={!cart?.length}
               onClick={purchaseCart}
               className='mt-6 w-full rounded-md bg-green-500 py-1.5 font-medium text-green-50 flex items-center justify-center gap-5 capitalize hover:bg-green-600'
             >
               Seguir Compra en Wp
-            </a>
+            </button>
           )}
           {/*   <button
             onClick={checkout}
