@@ -3,6 +3,7 @@ import FiltrosPc from './components/FiltrosPc'
 import Burguers from './components/Burguers'
 import getBurguers from '../actions/getBurguers'
 import { toast } from 'react-hot-toast'
+import prisma from '@/app/libs/prismadb'
 
 const Page = async () => {
   const burguersPrisma = await getBurguers()
