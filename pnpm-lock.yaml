@@ -31,7 +31,6 @@ dependencies:
   '@next-auth/prisma-adapter': 1.0.6_frn5qpxffbyvohns2s2fks3bke
   '@prisma/client': 4.14.0_prisma@4.14.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.3.2
-  '@types/node': 20.1.2
   '@types/react': 18.2.6
   '@types/react-dom': 18.2.4
   autoprefixer: 10.4.14_postcss@8.4.23
@@ -49,12 +48,13 @@ dependencies:
   react-hot-toast: 2.4.1_biqbaboplfbrettd7655fr4n2y
   react-icons: 4.8.0_react@18.2.0
   tailwindcss: 3.3.2
-  typescript: 5.0.4
   zustand: 4.3.8_react@18.2.0
 
 devDependencies:
   '@types/bcrypt': 5.0.0
+  '@types/node': 20.1.2
   prisma: 4.14.0
+  typescript: 5.0.4
 
 packages:
 
@@ -370,6 +370,7 @@ packages:
 
   /@types/node/20.1.2:
     resolution: {integrity: sha512-CTO/wa8x+rZU626cL2BlbCDzydgnFNgc19h4YvizpTO88MFQxab8wqisxaofQJ/9bLGugRdWIuX/TbIs6VVF6g==}
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -3119,7 +3120,6 @@ packages:
     resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
     engines: {node: '>=12.20'}
     hasBin: true
-    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

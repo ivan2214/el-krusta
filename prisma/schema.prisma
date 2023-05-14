@@ -43,3 +43,46 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
+
+model Burguer {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  titulo       String
+  descripcion  String
+  precio       Int
+  descuento    Int
+  rating       Float
+  pictures     Picture[]
+  categorias   Categoria[]
+  ingredientes Ingrediente[]
+  reviews      Review[]
+}
+
+model Picture {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  src       String
+  alt       String
+  burguer   Burguer @relation(fields: [burguerId], references: [id])
+  burguerId String  @db.ObjectId
+}
+
+model Categoria {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  nombre    String
+  burguer   Burguer @relation(fields: [burguerId], references: [id])
+  burguerId String  @db.ObjectId
+}
+
+model Ingrediente {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  nombre    String
+  burguer   Burguer @relation(fields: [burguerId], references: [id])
+  burguerId String  @db.ObjectId
+}
+
+model Review {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  comentario String
+  estrellas  Int
+  burguer    Burguer @relation(fields: [burguerId], references: [id])
+  burguerId  String  @db.ObjectId
+}

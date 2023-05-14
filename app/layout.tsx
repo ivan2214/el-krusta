@@ -8,6 +8,7 @@ import { CategorieContextProvider } from './context/CategoriesContext'
 import { IngredientesContextProvider } from './context/IngredientesContext'
 import ToasterContext from './context/ToasterContext'
 import './globals.css'
+import ClientOnly from './components/ClientOnly'
 
 export const metadata = {
   title: 'El Krusta',
@@ -22,16 +23,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang='es'>
       <body className='container mx-auto'>
         <AuthContext>
-          <BurguerContextProvider>
-            <CategorieContextProvider>
-              <IngredientesContextProvider>
-                <NavBarTwo currentUser={currentUser} />
-                <ToasterContext />
-                {children}
-                <Footer />
-              </IngredientesContextProvider>
-            </CategorieContextProvider>
-          </BurguerContextProvider>
+          <ClientOnly>
+            <NavBarTwo currentUser={currentUser} />
+            <ToasterContext />
+          </ClientOnly>
+          <div className='pb-10 pt-5'>{children}</div>
+          <Footer />
         </AuthContext>
       </body>
     </html>

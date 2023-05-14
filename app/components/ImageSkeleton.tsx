@@ -9,7 +9,7 @@ interface ImageSkeletonProps {
   src: string
   alt?: string
   className?: string
-  id?: number
+  id?: String
   onClick?: boolean
 }
 

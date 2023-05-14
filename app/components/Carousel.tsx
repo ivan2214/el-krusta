@@ -3,9 +3,14 @@
 import CardBurguers from './CardBurguerss/CardBurguers'
 import dataBurguers from '@/app/data/burguers.json'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import { SafeBurguer } from '../types'
+import { Burguer } from '@prisma/client'
 
-function Carousel() {
-  const burguers = [...dataBurguers]
+interface CarrouselProps {
+  burguers: Burguer[]
+}
+
+const Carousel: React.FC<CarrouselProps> = ({ burguers }) => {
   const scrollLeft = () => {
     const element = window && document && document.getElementById('content')
     if (element) {
@@ -32,9 +37,9 @@ function Carousel() {
           id='content'
           className='carousel p-4 flex items-center justify-start overflow-x-auto scroll-smooth relative  scrollbar-hide gap-5'
         >
-          {burguers?.slice(0, 5).map((b) => (
-            <div key={b.id}>
-              <CardBurguers burguer={b} />
+          {burguers?.map((burguer) => (
+            <div key={burguer?.id}>
+              <CardBurguers data={burguer} />
             </div>
           ))}
         </section>

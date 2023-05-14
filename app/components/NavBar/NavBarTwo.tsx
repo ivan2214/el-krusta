@@ -14,7 +14,7 @@ import {
 import Image from 'next/image'
 import ImageSkeleton from '../ImageSkeleton'
 
-type NavBarProps = {
+interface NavBarProps {
   currentUser: User | null
 }
 
@@ -43,7 +43,6 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               <a
                 href='/carta'
                 className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
-                aria-current='page'
               >
                 <MdOutlineRestaurantMenu className='' size={25} />
                 La carta

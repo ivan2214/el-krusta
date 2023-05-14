@@ -1,42 +1,50 @@
+import { Burguer as BurguerPrisma } from '@prisma/client'
+
 export interface Burguer {
-  id: number
+  id: string
   titulo: string
   descripcion: string
-  categoria: string
   precio: number
-  ingredientes: string[]
-  imagen: string
   quantity?: number
   descuento?: number
   rating?: number
-  reviews?: number
-  hrefReviews?: string
-  features?: Feature[]
-  colors?: Color[]
-  sizes?: Size[] // hacer que la propiedad 'sizes' sea opcional
   pictures?: Picture[]
+  categorias?: Categoria[]
+  ingredientes?: Ingrediente[]
+  reviews?: Review[]
 }
+
+interface Review {
+  id: string
+  comentario: string
+  estrellas: Number
+  burguerId: string
+}
+
+export type SafeBurguer = Omit<
+  BurguerPrisma & Burguer,
+  'createdAt' | 'pictureId' | 'categoriaId' | ''
+> & {}
 
 interface CardBurguerDetailProps {
   burguerDetail: Burguer
 }
 
+interface Ingrediente {
+  id: string
+  nombre: string
+  burguerId: string
+}
+
+interface Categoria {
+  id: string
+  nombre: string
+  burguerId: string
+}
+
 interface Picture {
+  id: string
+  burguerId: string
   src: string
   alt: string
-}
-
-interface Size {
-  name: string
-  inStock: boolean
-}
-
-interface Color {
-  name: string
-  class: string
-}
-
-interface Feature {
-  name: string
-  details: string
 }

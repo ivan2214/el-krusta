@@ -1,24 +1,24 @@
-'use client'
 import CardBurguers from '@/app/components/CardBurguerss/CardBurguers'
-import { BurguerContext } from '@/app/context/BurguersContext'
-import React, { useContext } from 'react'
+import { SafeBurguer } from '@/app/types'
 
-type Props = {}
+import React from 'react'
 
-const Burguers = (props: Props) => {
-  const burguers = useContext(BurguerContext)
-  const burguersAcortadas = burguers.slice(0, 6)
+interface BurguersProps {
+  data: SafeBurguer[]
+}
+
+const Burguers: React.FC<BurguersProps> = ({ data }) => {
   return (
     <main className='w-full'>
       <h3 className='font-bold text-3xl text-center py-5 text-krusta capitalize'>
         La carta mas rica
       </h3>
       <section className='grid py-20 lg:p-20 md:p-10  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-16 overflow-hidden place-items-center'>
-        {burguersAcortadas?.map((b) => (
-          <div key={b.id}>
-            <CardBurguers burguer={b} />
-          </div>
-        ))}
+        {!data.length ? (
+          <p>no hay</p>
+        ) : (
+          data?.map((burguer) => <CardBurguers key={burguer.id} data={burguer} />)
+        )}
       </section>
     </main>
   )

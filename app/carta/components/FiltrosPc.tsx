@@ -1,9 +1,14 @@
 'use client'
-import { CategorieContext } from '@/app/context/CategoriesContext'
-import { IngredientesContext } from '@/app/context/IngredientesContext'
-import React, { useContext, useState } from 'react'
 
-const FiltrosPc = () => {
+import { Categoria, Ingrediente } from '@/app/types'
+import React, { useState } from 'react'
+
+interface FiltrosPcProps {
+  categories: Categoria[]
+  ingredientes: Ingrediente[]
+}
+
+const FiltrosPc: React.FC<FiltrosPcProps> = ({ categories, ingredientes }) => {
   const [openFiltersIngredientes, setOpenFiltersIngredientes] = useState(false)
   const [openFiltersCategories, setOpenFiltersCategories] = useState(false)
   const [openFiltersOrder, setOpenFiltersOrder] = useState(false)
@@ -13,8 +18,6 @@ const FiltrosPc = () => {
     order: '',
   })
 
-  const categories = useContext(CategorieContext)
-  const ingredientes = useContext(IngredientesContext)
   const condition = false
 
   function onChangeFilters(target: any) {
@@ -75,7 +78,7 @@ const FiltrosPc = () => {
 
       {openFiltersIngredientes && (
         <section className=' my-5 w-full border border-white px-5  py-10 shadow-sm'>
-          {ingredientes.map((i) => (
+          {ingredientes?.map((i) => (
             <div key={i.id} className='flex items-center justify-between gap-3'>
               <label className='select-none' htmlFor={i.nombre}>
                 {i.nombre}
@@ -110,10 +113,10 @@ const FiltrosPc = () => {
               <option className='bg-krusta text-white' value='all'>
                 Todas
               </option>
-              {categories.map((c) => {
+              {categories?.map((cat) => {
                 return (
-                  <option key={c.id} className='bg-krusta text-white' value={c?.titulo}>
-                    {c?.titulo}
+                  <option key={cat?.id} className='bg-krusta text-white' value={cat?.nombre}>
+                    {cat?.nombre}
                   </option>
                 )
               })}
@@ -177,9 +180,9 @@ const FiltrosPc = () => {
           <div className='flex items-center justify-between gap-3'>
             <select onChange={({ target }) => onChangeFilters(target)}>
               <option value='all'>Todas</option>
-              {categories.map((c) => (
-                <option key={c.id} value={c.titulo}>
-                  {c.titulo}
+              {categories?.map((cat) => (
+                <option key={cat?.id} value={cat?.nombre}>
+                  {cat?.nombre}
                 </option>
               ))}
             </select>
@@ -193,9 +196,9 @@ const FiltrosPc = () => {
           <div className='flex items-center justify-between gap-3'>
             <select onChange={({ target }) => onChangeFilters(target)}>
               <option value='all'>Todas</option>
-              {ingredientes.map((i) => (
-                <option key={i.id} value={i.nombre}>
-                  {i.nombre}
+              {ingredientes?.map((ingrediente) => (
+                <option key={ingrediente?.id} value={ingrediente?.nombre}>
+                  {ingrediente?.nombre}
                 </option>
               ))}
             </select>

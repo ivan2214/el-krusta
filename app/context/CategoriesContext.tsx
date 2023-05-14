@@ -2,7 +2,7 @@
 import React, { createContext } from 'react'
 import categories from '@/app/data/categorias.json'
 
-type CategorieContextProviderProps = {
+interface CategorieContextProviderProps {
   children: React.ReactNode
 }
 
