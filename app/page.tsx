@@ -6,6 +6,7 @@ import Section from './components/Section/Section'
 import ClientOnly from './components/ClientOnly'
 import Container from './components/Container'
 import Loading from './components/Loading'
+import prisma from '@/app/libs/prismadb'
 
 const Home = async () => {
   const burguers = await prisma?.burguer.findMany({
