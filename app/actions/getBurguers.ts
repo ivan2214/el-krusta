@@ -1,4 +1,5 @@
 import prisma from '@/app/libs/prismadb'
+import getcategorias from './getCategories'
 
 export default async function getBurguers() {
   const burguers = await prisma.burguer.findMany({
@@ -10,7 +11,7 @@ export default async function getBurguers() {
     },
   })
 
-  /*   if (!burguers?.length) {
+  if (!burguers?.length) {
     await prisma.burguer.create({
       data: {
         titulo: 'Hamburguesa clásica',
@@ -43,8 +44,17 @@ export default async function getBurguers() {
         },
       },
     })
-  } */
+  }
 
-  return burguers
+  const burguersAfterCreate = await prisma.burguer.findMany({
+    include: {
+      ingredientes: true,
+      categorias: true,
+      pictures: true,
+      reviews: true,
+    },
+  })
+
+  return burguersAfterCreate
   /* return prisma.$transaction([burguers]) */
 }

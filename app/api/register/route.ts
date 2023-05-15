@@ -14,6 +14,7 @@ export async function POST(request: Request) {
       email,
       name,
       hashedPassword,
+      admin: false,
     },
   })
 

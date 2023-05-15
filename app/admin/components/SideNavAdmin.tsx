@@ -2,6 +2,7 @@ import React from 'react'
 import { GiHamburger } from 'react-icons/gi'
 import { FiUsers } from 'react-icons/fi'
 import { RxDashboard } from 'react-icons/rx'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -62,13 +63,13 @@ const SideNavAdmin = (props: Props) => {
               </li>
 
               <li>
-                <a
-                  href='#'
+                <Link
+                  href='/admin/burguers'
                   className='text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group '
                 >
                   <GiHamburger size={20} />
                   <span className='ml-3 flex-1 whitespace-nowrap'>Burguers</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

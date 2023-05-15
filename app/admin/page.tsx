@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import React from 'react'
-import SideNavAdmin from './components/SideNavAdmin'
 import SalesThisWeek from './components/SalesThisWeek'
 import LatestTransactions from './components/LatestTransactions'
 import LatestCustomers from './components/LatestCustomers'
@@ -12,7 +10,6 @@ const Page = () => {
   return (
     <div>
       <div className='flex overflow-hidden bg-white '>
-        <SideNavAdmin />
         <div
           className='bg-gray-900 opacity-50 hidden fixed inset-0 z-10'
           id='sidebarBackdrop'

@@ -4,11 +4,13 @@ import Burguers from './components/Burguers'
 import getBurguers from '../actions/getBurguers'
 import { toast } from 'react-hot-toast'
 import prisma from '@/app/libs/prismadb'
+import getcategorias from '../actions/getCategories'
+import getingredientes from '../actions/getIngredientes'
 
 const Page = async () => {
   const burguersPrisma = await getBurguers()
-  const categories = await prisma?.categoria.findMany()
-  const ingredientes = await prisma?.ingrediente.findMany()
+  const categories = await getcategorias()
+  const ingredientes = await getingredientes()
 
   if (!categories || !ingredientes) {
     toast('sin ingredientes')

@@ -18,7 +18,6 @@ interface Review {
   id: string
   comentario: string
   estrellas: Number
-  burguerId: string
 }
 
 export type SafeBurguer = Omit<
@@ -33,18 +32,15 @@ interface CardBurguerDetailProps {
 interface Ingrediente {
   id: string
   nombre: string
-  burguerId: string
 }
 
 interface Categoria {
   id: string
   nombre: string
-  burguerId: string
 }
 
 interface Picture {
   id: string
-  burguerId: string
   src: string
   alt: string
 }
