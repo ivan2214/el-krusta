@@ -299,7 +299,7 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               <div className='flex flex-wrap py-5 items-center justify-start gap-4'>
                 {data.categorias.length >= 1 &&
                   data.categorias.map((cat) => (
-                    <div className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
+                    <div key={cat} className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
                       <span
                         className='text-red-500 px-2 py-2 rounded-md'
                         onClick={() => deleteCat(cat)}
@@ -370,7 +370,7 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               <div className='flex flex-wrap py-5 items-center justify-start gap-4'>
                 {data.ingredientes.length >= 1 &&
                   data.ingredientes.map((ing) => (
-                    <div className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
+                    <div key={ing} className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
                       <span
                         className='text-red-500 px-2 py-2 rounded-md'
                         onClick={() => deleteIng(ing)}
