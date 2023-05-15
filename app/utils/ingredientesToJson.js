@@ -27,5 +27,3 @@ const ingredientesConId = ingredientes.map((ingrediente, index) => {
 })
 
 const ingredientesJson = JSON.stringify(ingredientesConId)
-
-console.log(ingredientesConId)

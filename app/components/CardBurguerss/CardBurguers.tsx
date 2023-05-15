@@ -1,61 +1,66 @@
+'use client'
 import React from 'react'
 import ImageSkeleton from '../ImageSkeleton'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { useCartStore } from '@/app/store/useCartStore'
-import { Burguer } from '@/app/types'
+import { Burguer, SafeBurguer } from '@/app/types'
 import { IoMdHeart } from 'react-icons/io'
 import { useRouter } from 'next/navigation'
+import Loading from '../Loading'
 
-type CardBurguersProps = {
-  burguer: Burguer
+interface CardBurguersProps {
+  data: Burguer
 }
 
-const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
-  const router = useRouter()
+const CardBurguers: React.FC<CardBurguersProps> = ({ data }) => {
   const addCart = useCartStore((s) => s.addToCart)
-  const precioOriginal = burguer.precio
-  const descuento = burguer.descuento || 0 // Si el descuento no está definido, se considera que es 0%
+  const precioOriginal = data?.precio
+  const descuento = data?.descuento || 0 // Si el descuento no está definido, se considera que es 0%
   const precioConDescuento = precioOriginal - (precioOriginal * descuento) / 100
 
   return (
     <article className='w-72 text-gray-700 bg-white min-h-[10rem]  shadow-lg rounded-md border overflow-hidden relative '>
-      <ImageSkeleton
-        onClick
-        id={burguer?.id}
-        src={burguer?.imagen || 'https://via.placeholder.com/10x10?text='}
-        alt='asdasd'
-      />
+      {data?.pictures && (
+        <ImageSkeleton
+          onClick
+          id={data?.id}
+          src={data?.pictures[0]?.src || 'https://via.placeholder.com/10x10?text=dadas'}
+          alt='asdasd'
+        />
+      )}
 
       <div className='p-5 flex flex-col gap-3'>
         {/* badge */}
         <div className='flex items-center gap-2'>
-          <span className='px-3 py-1 rounded-full text-xs md:text-sm bg-gray-200 '>
-            {burguer.categoria}
-          </span>
+          {data?.categorias?.map((cat) => (
+            <span key={cat.id} className='px-3 py-1 rounded-full text-xs md:text-sm bg-gray-200 '>
+              {cat.nombre}
+            </span>
+          ))}
         </div>
 
         {/* title */}
         <h2 className='font-semibold text-xl overflow-ellipsis overflow-hidden whitespace-nowrap'>
-          {burguer.titulo || 'Best Burguer'}
+          {data?.titulo || 'Best Burguer'}
         </h2>
 
         {/* precio */}
 
         <div>
-          {burguer.descuento && (
+          {data?.descuento && (
             <span className=' text-lg font-bold '>${Math.floor(precioConDescuento)}</span>
           )}
           <div className='flex items-center gap-2 mt-1'>
             <span
               className={`  ${
-                burguer.descuento ? 'line-through opacity-50 text-sm' : 'text-lg font-bold'
+                data?.descuento ? 'line-through opacity-50 text-sm' : 'text-lg font-bold'
               } `}
             >
-              ${burguer.precio || '120'}
+              ${data?.precio || '120'}
             </span>
-            {burguer.descuento && (
+            {data?.descuento && (
               <span className='bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white capitalize'>
-                descuento del %{burguer.descuento}
+                descuento del %{data?.descuento}
               </span>
             )}
           </div>
@@ -64,7 +69,7 @@ const CardBurguers: React.FC<CardBurguersProps> = ({ burguer }) => {
         {/* cart */}
         <div className='flex justify-end'>
           <button
-            onClick={() => addCart(burguer)}
+            onClick={() => addCart(data)}
             className='text-black hover:text-orange-600 duration-150 transition ease-linear'
           >
             <AiOutlineShopping size={30} />

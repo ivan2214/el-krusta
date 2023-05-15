@@ -1,10 +1,7 @@
-'use client'
-
-import React, { useContext } from 'react'
+import React from 'react'
 import CardBurguerDetail from '@/app/components/CardBurguerDetail'
-import { BurguerContext } from '@/app/context/BurguersContext'
-import { useRouter } from 'next/navigation'
-import { toast } from 'react-hot-toast'
+import prisma from '@/app/libs/prismadb'
+
 import NotFoundBurguer from '@/app/components/NotFoundBurguer'
 
 type Props = {
@@ -13,13 +10,27 @@ type Props = {
   }
 }
 
-const Page = ({ params }: Props) => {
+const Page = async ({ params }: Props) => {
   const { id } = params
-  const burguers = useContext(BurguerContext)
-  const router = useRouter()
-  const burguerDetail = burguers.find((b) => b.id === Number(id))
+  const burguerDetail = await prisma?.burguer.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      pictures: true,
+      categorias: true,
+      ingredientes: true,
+      reviews: true,
+    },
+  })
 
-  return burguerDetail ? <CardBurguerDetail burguerDetail={burguerDetail} /> : <NotFoundBurguer />
+  const ingredientes = await prisma.ingrediente.findMany()
+
+  return burguerDetail ? (
+    <CardBurguerDetail burguerDetail={burguerDetail} ingredientes={ingredientes} />
+  ) : (
+    <NotFoundBurguer />
+  )
 }
 
 export default Page

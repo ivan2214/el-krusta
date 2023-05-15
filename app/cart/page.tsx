@@ -14,7 +14,6 @@ const Page = () => {
   const cart: Burguer[] = useFromStore(useCartStore, (state) => state.cart)
   const totalPrice = useFromStore(useCartStore, (state) => state.totalPrice)
   const [procesCompra, setProcesCompra] = useState(false)
-  console.log(cart)
 
   let total = 0
   if (cart) {
@@ -46,17 +45,18 @@ ${cart.reduce(
     window.open(`https://api.whatsapp.com/send?phone=3812516597&text=${encodeURIComponent(text)}`)
     setTimeout(() => setProcesCompra(false), 1000)
   }
+  
 
   return (
-    <div className='container mx-auto w-full bg-gray-100 py-5 px-0 md:p-20'>
+    <section className='container mx-auto w-full bg-gray-100 py-5 px-0 md:p-20'>
       <h1 className='mb-10 text-center text-2xl font-bold'>Cart Items</h1>
-      <div className='mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0'>
+      <section className='mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0'>
         {cart.length >= 1 ? (
-          <div className='rounded-lg md:w-2/3 flex-col flex gap-16 md:gap-5'>
+          <article className='rounded-lg md:w-2/3 flex-col flex gap-16 md:gap-5'>
             {cart?.map((b) => (
               <CartItem key={b?.id} burguer={b} />
             ))}
-          </div>
+          </article>
         ) : (
           <div className='h-full rounded-lg border bg-white p-6 flex flex-col items-start justify-center gap-5 shadow-md md:mt-0 md:w-2/3'>
             <div className='flex w-full text-center justify-start gap-3'>
@@ -69,7 +69,7 @@ ${cart.reduce(
           </div>
         )}
         {/* <!-- Sub total --> */}
-        <div className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3'>
+        <section className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3'>
           <div className='mb-2 flex justify-between'>
             <p className='text-gray-700'>Subtotal</p>
             <p className='text-gray-700'>${total}</p>
@@ -105,9 +105,9 @@ ${cart.reduce(
             <FaWhatsapp size={20} />
             Comprar
           </button> */}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
   )
 }
 

@@ -2,7 +2,7 @@
 import React, { createContext } from 'react'
 import burguers from '@/app/data/burguers.json'
 
-type BurguerContextProviderProps = {
+interface BurguerContextProviderProps {
   children: React.ReactNode
 }
 

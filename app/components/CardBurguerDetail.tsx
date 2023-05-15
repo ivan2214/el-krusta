@@ -3,14 +3,15 @@ import React, { useState } from 'react'
 import { IoMdHeart } from 'react-icons/io'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 import ImageSkeleton from './ImageSkeleton'
-import { Burguer } from '../types'
+import { Burguer, Ingrediente, SafeBurguer } from '../types'
 import { toast } from 'react-hot-toast'
 
-type CardBurguerDetailProps = {
+interface CardBurguerDetailProps {
   burguerDetail: Burguer
+  ingredientes: Ingrediente[]
 }
 
-const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
+const CardBurguerDetail = ({ burguerDetail, ingredientes }: CardBurguerDetailProps) => {
   const [mainPicture, setMainPicture] = useState(0)
 
   if (!burguerDetail) toast.error(`Error burguer no eoncontrada`)
@@ -30,11 +31,11 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
           </span>
           {/* ::Main Picture */}
           <div className='w-auto h-56 sm:h-72 lg:h-full max-h-96 overflow-hidden'>
-            {burguerDetail?.pictures && (
+            {burguerDetail?.pictures?.length && (
               <ImageSkeleton
                 src={burguerDetail?.pictures[mainPicture]?.src}
                 alt={burguerDetail?.descripcion}
-                className='object-contain w-full h-full'
+                className='object-contain cursor-default w-full h-full'
               />
             )}
           </div>
@@ -78,18 +79,6 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
             {/* :::Description */}
             <p className='mt-10 text-base text-gray-500'>{burguerDetail?.descripcion}</p>
             {/* :::Features */}
-            <ul className='my-5 flex flex-col space-y-2'>
-              {burguerDetail?.features?.map((feature) => (
-                <li
-                  key={feature?.name}
-                  className='inline-flex items-center space-x-2 text-gray-500'
-                >
-                  <span className='w-1.5 h-1.5 rounded-full bg-yellow-600' />
-                  <span className='text-sm font-semibold'>{feature?.name}:</span>
-                  <span className='text-sm font-normal'>{feature?.details}</span>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* ::Customization Container */}
@@ -119,28 +108,28 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
                 className='form-select py-1 pl-2 w-full max-w-xs rounded border-2 border-gray-300 bg-gray-100 text-gray-500 focus:border-yellow-600 focus:ring-0'
               >
                 <option value=''>Color</option>
-                {burguerDetail?.colors?.map((color) => (
-                  <option key={color.name} value={color.name}>
-                    {color.name}
-                  </option>
-                ))}
               </select>
               {/* :::Size */}
               <label htmlFor='size' className='sr-only'>
                 Select your size
               </label>
-              <select
-                name='size'
-                id='size'
-                className='form-select py-1 pl-2 w-full max-w-xs rounded border-2 border-gray-300 bg-gray-100 text-gray-500 focus:border-yellow-600 focus:ring-0'
-              >
-                <option value=''>Size</option>
-                {burguerDetail?.sizes?.map((size) => (
-                  <option key={size.name} value={size.name}>
-                    {size.name}
-                  </option>
+            </div>
+            <div className='grid grid-cols-3 gap-10 p-5'>
+              {ingredientes?.length &&
+                ingredientes?.map((ingrediente) => (
+                  <div
+                    key={ingrediente?.id}
+                    className='flex items-center gap-3 bg-gray-300 px-2 py-1  rounded-md'
+                  >
+                    <label htmlFor={ingrediente?.id}>{ingrediente?.nombre}</label>
+                    <input
+                      id={ingrediente?.id}
+                      type='checkbox'
+                      className=' text-black  block'
+                      value={ingrediente?.nombre}
+                    />
+                  </div>
                 ))}
-              </select>
             </div>
           </div>
 
@@ -180,10 +169,6 @@ const CardBurguerDetail = ({ burguerDetail }: CardBurguerDetailProps) => {
                 {/* empty stars */}
               </div>
               {/* ::::all reviews */}
-              <a
-                href={burguerDetail?.hrefReviews}
-                className='ml-2 text-sm text-sky-400 font-medium tracking-wide hover:text-sky-500 hover:underline'
-              >{`${burguerDetail?.reviews} reviews`}</a>
             </div>
           </div>
         </div>

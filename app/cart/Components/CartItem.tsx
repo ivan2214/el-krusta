@@ -18,8 +18,16 @@ export default function CartItem({ burguer }: Props) {
   return (
     <div className='justify-between rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
       {/* <img src={burguer.imagen} alt='product-image' className='w-full rounded-lg sm:w-40' /> */}
-      <ImageSkeleton className='w-full rounded-lg sm:w-40'  src={burguer?.imagen || 'https://via.placeholder.com/10x10?text='} alt='asdasd' />
-      <div className='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
+      <figure>
+        {burguer?.pictures?.length && (
+          <ImageSkeleton
+            className='w-full rounded-lg sm:w-40'
+            src={burguer?.pictures[0]?.src || 'https://via.placeholder.com/10x10?text='}
+            alt='asdasd'
+          />
+        )}
+      </figure>
+      <section className='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
         <div className='mt-5 sm:mt-0'>
           <h2 className='text-lg font-bold text-gray-900'>{burguer.titulo}</h2>
           <p className='mt-1 text-xs text-gray-700'>{burguer.descripcion}</p>
@@ -56,7 +64,7 @@ export default function CartItem({ burguer }: Props) {
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

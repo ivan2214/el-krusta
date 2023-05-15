@@ -4,7 +4,7 @@ import { signOut } from 'next-auth/react'
 import { CiLogin } from 'react-icons/ci'
 
 import React, { useEffect, useState } from 'react'
-import { MdOutlineRestaurantMenu } from 'react-icons/md'
+import { MdDashboard, MdOutlineRestaurantMenu } from 'react-icons/md'
 import {
   AiOutlineForm,
   AiOutlineInfoCircle,
@@ -14,7 +14,7 @@ import {
 import Image from 'next/image'
 import ImageSkeleton from '../ImageSkeleton'
 
-type NavBarProps = {
+interface NavBarProps {
   currentUser: User | null
 }
 
@@ -43,7 +43,6 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               <a
                 href='/carta'
                 className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
-                aria-current='page'
               >
                 <MdOutlineRestaurantMenu className='' size={25} />
                 La carta
@@ -296,6 +295,17 @@ const NavBarTwo: React.FC<NavBarProps> = ({ currentUser }) => {
               </button>
             )}
           </div>
+          {currentUser?.admin && (
+            <div className='flex items-center justify-center gap-3 '>
+              <a
+                href='/admin'
+                className='flex capitalize font-semibold items-center justify-center gap-3  text-white hover:text-black duration-150 transition ease-linear'
+              >
+                <MdDashboard className='' size={25} />
+                Admin panel
+              </a>
+            </div>
+          )}
         </section>
       </div>
     </nav>

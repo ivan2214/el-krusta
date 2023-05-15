@@ -1,30 +1,23 @@
 [
   {
-    "id": 1,
     "titulo": "Clásicas"
   },
   {
-    "id": 2,
     "titulo": "Especiales"
   },
   {
-    "id": 3,
     "titulo": "Pollo"
   },
   {
-    "id": 4,
     "titulo": "Veganas"
   },
   {
-    "id": 5,
     "titulo": "Vegetarianas"
   },
   {
-    "id": 6,
     "titulo": "Carnes"
   },
   {
-    "id": 7,
     "titulo": "Pescado"
   }
 ]

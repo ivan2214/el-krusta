@@ -3,8 +3,14 @@ import React from 'react'
 import { HiOutlineArrowRight } from 'react-icons/hi'
 
 import Carousel from '../components/Carousel'
+import { SafeBurguer } from '../types'
+import { Burguer } from '@prisma/client'
 
-const Services = () => {
+interface ServicesProps {
+  burguers: Burguer[]
+}
+
+const Services: React.FC<ServicesProps> = ({ burguers }) => {
   return (
     <section className='flex w-full items-center justify-center flex-col  gap-10 '>
       <div className='flex w-full items-center justify-center flex-col gap-8  '>
@@ -18,11 +24,13 @@ const Services = () => {
         </div>
       </div>
 
-      <Carousel />
+      <Carousel burguers={burguers} />
 
       <div className='w-full flex justify-end mt-10  pr-10'>
         <button className='flex items-center justify-center gap-5'>
-          <a href='/carta' className='font-light text-xl uppercase'>Ver mas</a>
+          <a href='/carta' className='font-light text-xl uppercase'>
+            Ver mas
+          </a>
           <HiOutlineArrowRight size={25} />
         </button>
       </div>

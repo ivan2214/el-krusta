@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { HiOutlineArrowRight } from 'react-icons/hi'
 
-type SectionProps = {
+interface SectionProps {
   text1?: string
   text2?: string
   text3?: string
