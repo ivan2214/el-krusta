@@ -41,7 +41,7 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = ({ src, alt, className, id, 
         object-cover 
         max-h-52
         mx-auto`
-        } cursor-pointer`}
+        }`}
         src={cargada ? src : 'https://via.placeholder.com/10x10?text='}
         alt={alt || 'asdasdas'}
       />

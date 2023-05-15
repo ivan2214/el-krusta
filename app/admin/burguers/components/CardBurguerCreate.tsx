@@ -11,14 +11,14 @@ const CardBurguerCreate: React.FC<CardBurguerCreateProps> = ({ data }) => {
     ? data.precio - (data.precio * data.descuento) / 100
     : data.precio
   return (
-    <div className='mx-auto sticky top-0  mt-11 w-80 overflow-hidden rounded-lg bg-krusta  shadow-lg'>
+    <div className='mx-auto sticky top-5  mt-11 w-80 overflow-hidden rounded-lg bg-krusta  shadow-lg'>
       <ImageSkeleton
         className='h-48 w-full object-cover object-center'
         src='https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
         alt='Product Image'
       />
       <div className='p-4'>
-        <h2 className='mb-2 text-lg font-medium text-white '>{data.titulo || 'Product Name'}</h2>
+        <h2 className='mb-2 text-lg font-medium text-white '>{data.nombre || 'Product Name'}</h2>
         <p className='mb-2 text-base text-gray-300 '>
           {data.descripcion || 'Product description goes here.'}
         </p>

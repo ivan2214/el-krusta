@@ -2,30 +2,111 @@
 import React, { useState } from 'react'
 import CardBurguerCreate from './CardBurguerCreate'
 import { Categoria, Ingrediente } from '@/app/types'
-import ImageSkeleton from '@/app/components/ImageSkeleton'
+import { useForm, SubmitHandler, FieldValues, Controller } from 'react-hook-form'
+import Input from '@/app/components/inputs/Input'
+import { toast } from 'react-hot-toast'
+import clsx from 'clsx'
+import { AiFillCloseCircle, AiOutlineClose } from 'react-icons/ai'
 
 interface CreateBurguerProps {
   categories: Categoria[]
   ingredientes: Ingrediente[]
 }
 
+type Inputs = {
+  nombre: string
+  descripcion: string
+  precio: number
+  descuento: number
+  pictures: string[]
+  categorias: string[]
+  ingredientes: string[]
+}
+
 const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes }) => {
-  const data = {
-    titulo: '',
+  const [data, setdata] = useState<Inputs>({
+    nombre: '',
     descripcion: '',
     precio: 0,
     descuento: 0,
     pictures: [],
     categorias: [],
     ingredientes: [],
-    reviews: [],
+  })
+
+  const [isLoading, setIsLoading] = useState(false)
+  const {
+    reset,
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues | Inputs>({
+    defaultValues: {
+      nombre: '',
+      descripcion: '',
+      precio: 0,
+      descuento: 0,
+      pictures: [],
+      categorias: [],
+      ingredientes: [],
+    },
+  })
+  /* const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data) */
+
+  const onSubmit: SubmitHandler<FieldValues | Inputs> = (data) => {
+    setIsLoading(true)
+    console.log('dataaa', { data })
+    setdata({
+      categorias: data.categorias ? data.categorias : [],
+      descripcion: data.descripcion,
+      descuento: data.descuento,
+      nombre: data.nombre,
+      precio: data.precio,
+      ingredientes: data.ingredientes ? data.ingredientes : [],
+      pictures: data.pictures ? data.pictures : [],
+    })
+    toast.success('creado correctamente')
   }
+
+  console.log('data state', { data })
 
   const [descount, setdescount] = useState(false)
 
   const toggleDescount = () => {
     setdescount(!descount)
   }
+
+  const resetDates = () => {
+    reset()
+    setdata({
+      nombre: '',
+      descripcion: '',
+      precio: 0,
+      descuento: 0,
+      pictures: [],
+      categorias: [],
+      ingredientes: [],
+    })
+  }
+  function deleteCat(cat: string) {
+    const categoriesFilter = data.categorias.filter((i) => i !== cat)
+
+    setdata({
+      ...data,
+      categorias: categoriesFilter,
+    })
+  }
+  function deleteIng(ing: string) {
+    const ingredientesFilter = data.ingredientes.filter((i) => i !== ing)
+
+    setdata({
+      ...data,
+      ingredientes: ingredientesFilter,
+    })
+  }
+
+  console.log({ data })
 
   return (
     <section className='flex lg:flex-row flex-col gap-3 '>
@@ -40,17 +121,18 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
             </div>
             <div className='w-full sm:w-auto px-4'>
               <div>
-                <button className='inline-block py-2 px-4 mr-3 text-xs text-center font-semibold leading-normal text-white bg-gray-600 hover:bg-gray-700 rounded-lg transition duration-200'>
-                  Cancel
-                </button>
-                <button className='inline-block py-2 px-4 text-xs text-center font-semibold leading-normal text-blue-50 bg-krusta hover:bg-gray-200 hover:text-black rounded-lg transition duration-200'>
-                  Save
+                <button
+                  onClick={resetDates}
+                  className='inline-block py-2 px-4 mr-3 text-xs text-center font-semibold leading-normal text-white bg-red-500 hover:bg-gray-700 rounded-lg transition duration-200'
+                >
+                  Borrar datos
                 </button>
               </div>
             </div>
           </div>
+
           {/* datos */}
-          <form action=''>
+          <form onSubmit={handleSubmit(onSubmit)}>
             {/* nombre */}
             <div className='flex flex-wrap items-center -mx-4 pb-8 mb-8 border-b border-gray-400 border-opacity-20'>
               <div className='w-full sm:w-1/3 px-4 mb-4 sm:mb-0'>
@@ -60,12 +142,30 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
                 <div className='max-w-xl'>
                   <div className='flex flex-wrap items-center -mx-3'>
                     <div className='w-full sm:w-1/2 px-3 mb-3 sm:mb-0'>
-                      <input
-                        className='block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg'
-                        id='formInput1-1'
-                        type='text'
-                        placeholder='ej... Chamaca'
+                      {/* include validation with required or other standard HTML validation rules */}
+
+                      <Controller
+                        name='nombre'
+                        control={control}
+                        defaultValue=''
+                        render={({ field }) => (
+                          <input
+                            className={`block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg  ${
+                              errors.nombre && 'focus:ring-rose-500'
+                            }  `}
+                            type='text'
+                            onChange={(e) => {
+                              field.onChange(e)
+                              setdata({
+                                ...data,
+                                nombre: e.target.value,
+                              })
+                            }}
+                            value={field.value}
+                          />
+                        )}
                       />
+                      {errors.nombre && <span className='text-red-500'>Error campo requerido</span>}
                     </div>
                   </div>
                 </div>
@@ -80,11 +180,28 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               </div>
               <div className='w-full sm:w-2/3 px-4'>
                 <div className='max-w-xl'>
-                  <textarea
-                    className='block h-56 py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg resize-none'
-                    id='formInput1-9'
-                    placeholder='Lorem ipsum dolor sit amet'
-                  ></textarea>
+                  <Controller
+                    name='descripcion'
+                    control={control}
+                    defaultValue=''
+                    render={({ field }) => (
+                      <textarea
+                        className='block h-56 py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg resize-none'
+                        onChange={(e) => {
+                          field.onChange(e)
+                          setdata({
+                            ...data,
+                            descripcion: e.target.value,
+                          })
+                        }}
+                        value={field.value}
+                      />
+                    )}
+                  />
+
+                  {errors.descripcion && (
+                    <span className='text-red-500'>Error campo requerido</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -97,9 +214,6 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               </div>
               <div className='w-full sm:w-2/3 px-4'>
                 <div className='flex flex-wrap sm:flex-nowrap max-w-xl'>
-                  <div className='flex-shrink-0 w-20 h-20 mb-4 mr-4 rounded-full'>
-                    <ImageSkeleton src='trizzle-assets/images/avatar-photo-form.png' alt='' />
-                  </div>
                   <div className='w-full py-8 px-4 text-center border-dashed border border-gray-400 hover:border-black focus:border-green-500 rounded-lg'>
                     <div className='relative group h-14 w-14 mx-auto mb-4'>
                       <div className='flex items-center justify-center h-14 w-14 bg-blue-500 group-hover:bg-blue-600 rounded-full'>
@@ -145,19 +259,56 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
                         ></path>
                       </svg>
                     </span>
-                    <select
-                      className='w-full py-4 appearance-none bg-transparent outline-none'
-                      id='formInput1-6'
-                      name=''
-                    >
-                      {categories?.map((category) => (
-                        <option key={category?.id} className='bg-gray-200 p-3 capitalize' value='1'>
-                          {category?.nombre}
-                        </option>
-                      ))}
-                    </select>
+                    <Controller
+                      name='categories'
+                      control={control}
+                      render={({ field }) => (
+                        <select
+                          className='w-full py-4 appearance-none bg-transparent outline-none'
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e)
+                            if (data.categorias.includes(e.target.value)) {
+                              return toast.error(` ${e.target.value} Ya seleccionada`)
+                            }
+                            setdata({
+                              ...data,
+                              categorias: [...data.categorias, e.target.value],
+                            })
+                          }}
+                        >
+                          {categories?.map((category) => (
+                            <option
+                              key={category?.id}
+                              className='bg-gray-200 p-3 capitalize'
+                              value={category.nombre}
+                            >
+                              {category?.nombre}
+                            </option>
+                          ))}
+                        </select>
+                      )}
+                    />
+
+                    {errors.descripcion && (
+                      <span className='text-red-500'>Error campo requerido</span>
+                    )}
                   </div>
                 </div>
+              </div>
+              <div className='flex flex-wrap py-5 items-center justify-start gap-4'>
+                {data.categorias.length >= 1 &&
+                  data.categorias.map((cat) => (
+                    <div className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
+                      <span
+                        className='text-red-500 px-2 py-2 rounded-md'
+                        onClick={() => deleteCat(cat)}
+                      >
+                        <AiFillCloseCircle size={20} />
+                      </span>
+                      <span className='text-gray-600'>{cat}</span>
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -177,23 +328,58 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
                         ></path>
                       </svg>
                     </span>
-                    <select
-                      className='w-full py-4 appearance-none bg-transparent outline-none'
-                      id='formInput1-6'
-                      name=''
-                    >
-                      {ingredientes?.map((ingrediente) => (
-                        <option
-                          key={ingrediente?.id}
-                          className='bg-gray-200 p-3 capitalize'
-                          value='1'
+                    <Controller
+                      name='ingredientes'
+                      control={control}
+                      render={({ field }) => (
+                        <select
+                          className='w-full py-4 appearance-none bg-transparent outline-none'
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e)
+                            if (data.ingredientes.includes(e.target.value)) {
+                              return toast.error(` ${e.target.value} Ya seleccionada`)
+                            }
+
+                            setdata({
+                              ...data,
+                              ingredientes: [...data.ingredientes, e.target.value],
+                            })
+                            console.log(data)
+                          }}
                         >
-                          {ingrediente?.nombre}
-                        </option>
-                      ))}
-                    </select>
+                          {ingredientes?.map((ingrediente) => (
+                            <option
+                              key={ingrediente?.id}
+                              className='bg-gray-200 p-3 capitalize'
+                              value={ingrediente.nombre}
+                            >
+                              {ingrediente?.nombre}
+                            </option>
+                          ))}
+                        </select>
+                      )}
+                    />
+
+                    {errors.ingredientes && (
+                      <span className='text-red-500'>Error campo requerido</span>
+                    )}
                   </div>
                 </div>
+              </div>
+              <div className='flex flex-wrap py-5 items-center justify-start gap-4'>
+                {data.ingredientes.length >= 1 &&
+                  data.ingredientes.map((ing) => (
+                    <div className='bg-gray-200 flex items-center justify-start gap-3 rounded-lg px-4'>
+                      <span
+                        className='text-red-500 px-2 py-2 rounded-md'
+                        onClick={() => deleteIng(ing)}
+                      >
+                        <AiFillCloseCircle size={20} />
+                      </span>
+                      <span className='text-gray-600'>{ing}</span>
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -205,12 +391,28 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               <div className='w-full sm:w-2/3 px-4'>
                 <div className='max-w-xl'>
                   <div className='w-full sm:w-1/2 px-3 mb-3 sm:mb-0'>
-                    <input
-                      className='block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg'
-                      id='formInput1-1'
-                      type='number'
-                      placeholder='ej... 1200'
+                    <Controller
+                      name='precio'
+                      control={control}
+                      render={({ field }) => (
+                        <input
+                          className={`block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg  ${
+                            errors.precio && 'focus:ring-rose-500'
+                          }  `}
+                          type='number'
+                          min={100}
+                          max={100000}
+                          onChange={(e) => {
+                            field.onChange(e)
+                            setdata({
+                              ...data,
+                              precio: Number(e.target.value),
+                            })
+                          }}
+                        />
+                      )}
                     />
+                    {errors.precio && <span className='text-red-500'>Error campo requerido</span>}
                   </div>
                 </div>
               </div>
@@ -251,17 +453,43 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
                 <div className='w-full sm:w-2/3 px-4'>
                   <div className='max-w-xl'>
                     <div className='w-full sm:w-1/2 px-3 mb-3 sm:mb-0'>
-                      <input
-                        className='block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg'
-                        id='formInput1-1'
-                        type='number'
-                        placeholder='ej... 1200'
+                      <Controller
+                        name='descuento'
+                        control={control}
+                        defaultValue=''
+                        render={({ field }) => (
+                          <input
+                            className={`block py-4 px-3 w-full text-sm text-gray-500 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-black focus:border-green-500 rounded-lg  ${
+                              errors.descuento && 'focus:ring-rose-500'
+                            }  `}
+                            type='number'
+                            min={0}
+                            max={100000}
+                            onChange={(e) => {
+                              field.onChange(e)
+                              setdata({
+                                ...data,
+                                descuento: Number(e.target.value),
+                              })
+                            }}
+                            value={field.value}
+                          />
+                        )}
                       />
+                      {errors.descuento && (
+                        <span className='text-red-500'>Error campo requerido</span>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
             )}
+
+            <input
+              type='submit'
+              className='inline-block py-2 px-4 mr-3 text-xs text-center font-semibold leading-normal text-white bg-red-500 hover:bg-gray-700 rounded-lg transition duration-200'
+              value='Enviar'
+            />
           </form>
         </div>
       </div>
