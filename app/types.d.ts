@@ -25,6 +25,8 @@ export type SafeBurguer = Omit<
   'createdAt' | 'pictureId' | 'categoriaId' | ''
 > & {}
 
+export type BurguerCard = Omit<Burguer, 'createdAt' | 'pictureId' | 'categoriaId' | 'reviews' | "rating"> & {}
+
 interface CardBurguerDetailProps {
   burguerDetail: Burguer
 }

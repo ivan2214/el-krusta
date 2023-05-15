@@ -3,13 +3,13 @@ import React from 'react'
 import ImageSkeleton from '../ImageSkeleton'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { useCartStore } from '@/app/store/useCartStore'
-import { Burguer, SafeBurguer } from '@/app/types'
+import { Burguer, BurguerCard, SafeBurguer } from '@/app/types'
 import { IoMdHeart } from 'react-icons/io'
 import { useRouter } from 'next/navigation'
 import Loading from '../Loading'
 
 interface CardBurguersProps {
-  data: Burguer
+  data: BurguerCard
 }
 
 const CardBurguers: React.FC<CardBurguersProps> = ({ data }) => {

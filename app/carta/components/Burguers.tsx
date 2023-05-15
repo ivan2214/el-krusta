@@ -1,10 +1,10 @@
 import CardBurguers from '@/app/components/CardBurguerss/CardBurguers'
-import { SafeBurguer } from '@/app/types'
+import { Burguer, BurguerCard, SafeBurguer } from '@/app/types'
 
 import React from 'react'
 
 interface BurguersProps {
-  data: SafeBurguer[]
+  data: BurguerCard[]
 }
 
 const Burguers: React.FC<BurguersProps> = ({ data }) => {
