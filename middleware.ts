@@ -8,13 +8,10 @@ export async function middleware(req: NextRequest) {
     req,
     secret: process.env.NEXTAUTH_SECRET,
   })
-  console.log({
-    session,
-  })
 
-  /* if (session?.email !== process.env.ADMIN_EMAIL) {
+  if (session?.email !== process.env.ADMIN_EMAIL) {
     return NextResponse.redirect(new URL('/carta', req.url))
-  } */
+  }
 
   return NextResponse.next()
 }

@@ -54,6 +54,7 @@ export default async function getBurguers() {
       reviews: true,
     },
   })
+  console.log(burguersAfterCreate)
 
   return burguersAfterCreate
   /* return prisma.$transaction([burguers]) */

@@ -66,7 +66,7 @@ model Burguer {
   descripcion  String
   precio       Int
   descuento    Int
-  rating       Float
+  rating       Float?
   pictures     Picture[]
   categorias   Categoria[]
   ingredientes Ingrediente[]
