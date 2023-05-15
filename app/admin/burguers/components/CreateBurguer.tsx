@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import CardBurguerCreate from './CardBurguerCreate'
 import { Categoria, Ingrediente } from '@/app/types'
+import ImageSkeleton from '@/app/components/ImageSkeleton'
 
 interface CreateBurguerProps {
   categories: Categoria[]
@@ -97,7 +98,7 @@ const CreateBurguer: React.FC<CreateBurguerProps> = ({ categories, ingredientes 
               <div className='w-full sm:w-2/3 px-4'>
                 <div className='flex flex-wrap sm:flex-nowrap max-w-xl'>
                   <div className='flex-shrink-0 w-20 h-20 mb-4 mr-4 rounded-full'>
-                    <img src='trizzle-assets/images/avatar-photo-form.png' alt='' />
+                    <ImageSkeleton src='trizzle-assets/images/avatar-photo-form.png' alt='' />
                   </div>
                   <div className='w-full py-8 px-4 text-center border-dashed border border-gray-400 hover:border-black focus:border-green-500 rounded-lg'>
                     <div className='relative group h-14 w-14 mx-auto mb-4'>

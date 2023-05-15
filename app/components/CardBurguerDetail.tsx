@@ -115,13 +115,16 @@ const CardBurguerDetail = ({ burguerDetail, ingredientes }: CardBurguerDetailPro
               </label>
             </div>
             <div className='grid grid-cols-3 gap-10 p-5'>
-              {ingredientes.length &&
-                ingredientes.map((ingrediente) => (
-                  <div className='flex items-center gap-3 bg-gray-300 px-2 py-1  rounded-md'>
-                    <label htmlFor={ingrediente.id}>{ingrediente?.nombre}</label>
+              {ingredientes?.length &&
+                ingredientes?.map((ingrediente) => (
+                  <div
+                    key={ingrediente?.id}
+                    className='flex items-center gap-3 bg-gray-300 px-2 py-1  rounded-md'
+                  >
+                    <label htmlFor={ingrediente?.id}>{ingrediente?.nombre}</label>
                     <input
+                      id={ingrediente?.id}
                       type='checkbox'
-                      key={ingrediente?.id}
                       className=' text-black  block'
                       value={ingrediente?.nombre}
                     />
