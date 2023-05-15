@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 import { IoMdHeart } from 'react-icons/io'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 import ImageSkeleton from './ImageSkeleton'
-import { Burguer, Ingrediente, SafeBurguer } from '../types'
+import { Burguer, BurguerCard, Ingrediente, SafeBurguer } from '../types'
 import { toast } from 'react-hot-toast'
 
 interface CardBurguerDetailProps {
-  burguerDetail: Burguer
+  burguerDetail: BurguerCard
   ingredientes: Ingrediente[]
 }
 
@@ -16,7 +16,7 @@ const CardBurguerDetail = ({ burguerDetail, ingredientes }: CardBurguerDetailPro
 
   if (!burguerDetail) toast.error(`Error burguer no eoncontrada`)
 
-  const isHalfStar = !Number.isInteger(burguerDetail?.rating)
+  /* const isHalfStar = !Number.isInteger(burguerDetail?.rating) */
 
   return (
     <div className='mx-auto px-4 w-full max-w-7xl bg-white text-gray-700'>
@@ -155,7 +155,7 @@ const CardBurguerDetail = ({ burguerDetail, ingredientes }: CardBurguerDetailPro
                 {/* full stars */}
 
                 {/* half star */}
-                {isHalfStar && (
+            {/*     {isHalfStar && (
                   <span className='flex-shrink-0'>
                     <svg
                       className='w-4 h-4 text-yellow-500 fill-current'
@@ -165,7 +165,7 @@ const CardBurguerDetail = ({ burguerDetail, ingredientes }: CardBurguerDetailPro
                       <path d='M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524v-12.005zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z' />
                     </svg>
                   </span>
-                )}
+                )} */}
                 {/* empty stars */}
               </div>
               {/* ::::all reviews */}
